@@ -1,0 +1,279 @@
+@import "./_variables";
+@import "./_mixins";
+
+@font-face {
+  font-family: 'cmmn-js-pp';
+  src: url(@font-eot);
+  src: url(@font-eot) format('embedded-opentype'),
+       url(@font-woff) format('woff'),
+       url(@font-ttf) format('truetype'),
+       url(@pp-font-svg) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.djs-properties-panel {
+  .overlay();
+  position: relative;
+
+  &:empty {
+    display: none;
+  }
+
+  label,
+  input {
+    vertical-align: middle;
+  }
+
+
+  input,
+  button,
+  textarea {
+    padding: 3px 6px;
+    border: 1px solid @pp-color-gray-light;
+
+    &:focus {
+      .focus();
+    }
+
+    &.invalid {
+      .invalid();
+      &:focus {
+        box-shadow: 0 0 1px 2px fade(@pp-color-error, 20%);
+      }
+    }
+  }
+
+
+  [type=text],
+  textarea,
+  select {
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  label {
+    .label();
+  }
+
+  .entry-label {
+    .label();
+    font-size: 120%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    transition: margin 0.218s linear;
+    font-style: italic;
+
+    &.divider {
+      border-top: 1px dotted #ccc;
+      padding-top: 8px;
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
+
+  button {
+    .action-button();
+  }
+}
+
+.pp-error-message,
+.pp-error-message.pp-entry-link {
+  color: @pp-color-error;
+}
+
+.pp-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  &:first-of-type {
+    margin-top: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.pp-textfield,
+.pp-textarea {
+  margin-bottom: 3px;
+}
+
+.pp-radios-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 9px 0;
+
+  .pp-radio-wrapper {
+    margin: 6px 0;
+  }
+
+  input,
+  label {
+    vertical-align: middle;
+  }
+
+  input {
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+.pp-radios-group,
+.pp-checkbox {
+  input {
+    margin-left: 0;
+  }
+
+  label {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.pp-textfield {
+  input {
+    padding-right: 28px;
+  }
+
+  .clear {
+    background: transparent;
+    border: none;
+    top: 0;
+    right: 0;
+  }
+}
+
+.pp-combo-input {
+  margin-top: 7px;
+}
+
+.pp-select {
+  select {
+    height: 23px;
+  }
+  button.add {
+    top: -22px;
+    right: 0;
+  }
+}
+
+.pp-select,
+.pp-element-list {
+
+  button {
+    &.add,
+    &.clear {
+      top: -23px;
+      border-bottom: none;
+    }
+  }
+
+  button.add {
+    right: 0px;
+  }
+
+  button.clear {
+    right: 23px;
+  }
+}
+
+.djs-properties-entry {
+  margin-bottom: 9px;
+
+  .pp-field-wrapper {
+    position: relative;
+
+    input[readonly] + .clear {
+      display: none;
+    }
+  }
+}
+
+.pp-hidden {
+  display: none;
+}
+
+label.pp-hidden {
+  .pp-hidden;
+}
+
+.pp-table-add-row {
+  > button {
+    position: relative;
+    margin-left: 10px;
+  }
+}
+
+.pp-table {
+  margin-top: 10px;
+}
+
+.pp-table-row {
+  margin-bottom: 2px;
+  overflow: hidden;
+
+  > input,
+  > button {
+    float: left;
+  }
+
+  > label {
+    padding-left: 5px;
+  }
+
+  > label,
+  > input {
+
+    &.pp-table-row-columns-1 {
+      width: 100%;
+      &.pp-table-row-removable {
+        width: ~"calc(100% - 24px)";
+      }
+    }
+
+    &.pp-table-row-columns-2 {
+      width: 50%;
+      &.pp-table-row-removable {
+        width: ~"calc(50% - 12px)";
+      }
+      &:nth-child(2) {
+        border-left: none;
+      }
+    }
+  }
+
+  > button {
+    border-left: none;
+    position: static;
+  }
+}
+
+.djs-properties-static {
+  margin-bottom: 0;
+  margin-top: 0;
+  border: 1px solid @pp-color-gray-light;
+  background-color: white;
+  padding: 3px 6px;
+  font: 13.3333px Arial;
+  width: 100%;
+}
+
+.pp-entry-link {
+  cursor: pointer;
+  color: @pp-color-primary;
+}
+
+.pp-icon-warning:before {
+  .icon-font();
+  content: '\E806';
+}
+
+@import "./header";
+@import "./groups";
+@import "./listeners";
+@import "./tabs";
