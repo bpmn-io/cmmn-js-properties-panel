@@ -29,15 +29,15 @@ var bootstrapModeler = TestHelper.bootstrapModeler;
  */
 TestHelper.bootstrapModeler = function(diagram, options, locals) {
   return function(done) {
-    // var previousInstance = TestHelper.getCmmnJs();
+    var previousInstance = TestHelper.getCmmnJs();
 
-    // if (previousInstance) {
-    //   var container = previousInstance.container.parentNode;
+    if (previousInstance) {
+      var container = previousInstance.container.parentNode;
 
-    //   container.parentNode.removeChild(container);
+      container.parentNode.removeChild(container);
 
-    //   previousInstance.destroy();
-    // }
+      previousInstance.destroy();
+    }
     return bootstrapModeler(diagram, options, locals).apply(this, [ done ]);
   };
 };
