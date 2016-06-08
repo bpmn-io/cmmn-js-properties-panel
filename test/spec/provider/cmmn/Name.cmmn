@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:caseFileItemDefinition id="CaseFileItemDefinition_1" />
+  <cmmn:case id="Case_1">
+    <cmmn:caseFileModel id="CaseFileModel_1">
+      <cmmn:caseFileItem id="CaseFileItem_1" definitionRef="CaseFileItemDefinition_1" />
+    </cmmn:caseFileModel>
+    <cmmn:casePlanModel id="CasePlanModel_1" name="A CasePlanModel">
+      <cmmn:planItem id="PI_HumanTask_1" name="ITEM" definitionRef="HumanTask_1" />
+      <cmmn:planItem id="PI_HumanTask_2" definitionRef="HumanTask_2">
+        <cmmn:entryCriterion id="EntryCriterion_1" sentryRef="Sentry_1" />
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_HumanTask_3" definitionRef="HumanTask_3" name="ITEM" />
+      <cmmn:planItem id="PI_Task_1" definitionRef="Task_1">
+        <cmmn:entryCriterion id="EntryCriterion_2" sentryRef="Sentry_2" />
+      </cmmn:planItem>
+      <cmmn:sentry id="Sentry_2">
+        <cmmn:planItemOnPart id="PlanItemOnPart_1" sourceRef="PI_HumanTask_1" name="PLAN_ON_PART">
+          <cmmn:standardEvent>complete</cmmn:standardEvent>
+        </cmmn:planItemOnPart>
+      </cmmn:sentry>
+      <cmmn:sentry id="Sentry_1">
+        <cmmn:caseFileItemOnPart id="CaseFileItemOnPart_1" sourceRef="CaseFileItem_1" name="CASE_ON_PART">
+          <cmmn:standardEvent>update</cmmn:standardEvent>
+        </cmmn:caseFileItemOnPart>
+      </cmmn:sentry>
+      <cmmn:humanTask id="HumanTask_1" />
+      <cmmn:humanTask id="HumanTask_2" name="DEF" />
+      <cmmn:humanTask id="HumanTask_3" name="DEF">
+        <cmmn:planningTable id="PlanningTable_1hp5xc0">
+          <cmmn:discretionaryItem id="DIS_Task_2" definitionRef="Task_2" />
+        </cmmn:planningTable>
+      </cmmn:humanTask>
+      <cmmn:task id="Task_1" />
+      <cmmn:task id="Task_2" />
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmn:textAnnotation id="TextAnnotation_1">
+    <cmmn:text>TEXT_ANNOTATION</cmmn:text>
+  </cmmn:textAnnotation>
+  <cmmn:association id="Association_1" sourceRef="PI_HumanTask_3" targetRef="TextAnnotation_1" />
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram di:id="CMMNDiagram_1" name="DIAGRAM">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape di:id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="114" y="62" width="410" height="422" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PI_HumanTask_1_di" cmmnElementRef="PI_HumanTask_1">
+        <dc:Bounds x="145" y="82" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PI_HumanTask_2_di" cmmnElementRef="PI_HumanTask_2">
+        <dc:Bounds x="145" y="178" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PI_HumanTask_3_di" cmmnElementRef="PI_HumanTask_3">
+        <dc:Bounds x="142" y="278" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PI_Task_1_di" cmmnElementRef="PI_Task_1">
+        <dc:Bounds x="404" y="82" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="EntryCriterion_2_di" cmmnElementRef="EntryCriterion_2">
+        <dc:Bounds x="391" y="108" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNEdge di:id="PlanItemOnPart_1_di" cmmnElementRef="PlanItemOnPart_1" targetCMMNElementRef="EntryCriterion_2" isStandardEventVisible="true">
+        <di:waypoint xsi:type="dc:Point" x="245" y="122" />
+        <di:waypoint xsi:type="dc:Point" x="311" y="122" />
+        <di:waypoint xsi:type="dc:Point" x="311" y="122" />
+        <di:waypoint xsi:type="dc:Point" x="391" y="122" />
+        <cmmndi:CMMNLabel>
+          <dc:Bounds x="273" y="94.5" width="90" height="20" />
+        </cmmndi:CMMNLabel>
+      </cmmndi:CMMNEdge>
+      <cmmndi:CMMNShape di:id="CaseFileItem_1_di" cmmnElementRef="CaseFileItem_1">
+        <dc:Bounds x="436" y="193" width="36" height="50" />
+        <cmmndi:CMMNLabel>
+          <dc:Bounds x="409" y="243" width="90" height="20" />
+        </cmmndi:CMMNLabel>
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="EntryCriterion_1_di" cmmnElementRef="EntryCriterion_1">
+        <dc:Bounds x="235" y="208" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNEdge di:id="CaseFileItemOnPart_1_di" cmmnElementRef="CaseFileItemOnPart_1" targetCMMNElementRef="EntryCriterion_1" isStandardEventVisible="true">
+        <di:waypoint xsi:type="dc:Point" x="436" y="218" />
+        <di:waypoint xsi:type="dc:Point" x="345" y="218" />
+        <di:waypoint xsi:type="dc:Point" x="345" y="222" />
+        <di:waypoint xsi:type="dc:Point" x="255" y="222" />
+        <cmmndi:CMMNLabel>
+          <dc:Bounds x="300" y="213.5" width="90" height="20" />
+        </cmmndi:CMMNLabel>
+      </cmmndi:CMMNEdge>
+      <cmmndi:CMMNShape di:id="DIS_Task_2_di" cmmnElementRef="DIS_Task_2">
+        <dc:Bounds x="376" y="278" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNEdge di:id="DiscretionaryConnection_1" sourceCMMNElementRef="PI_HumanTask_3" targetCMMNElementRef="DIS_Task_2">
+        <di:waypoint xsi:type="dc:Point" x="242" y="318" />
+        <di:waypoint xsi:type="dc:Point" x="313" y="318" />
+        <di:waypoint xsi:type="dc:Point" x="313" y="318" />
+        <di:waypoint xsi:type="dc:Point" x="376" y="318" />
+      </cmmndi:CMMNEdge>
+      <cmmndi:CMMNShape di:id="TextAnnotation_1_di" cmmnElementRef="TextAnnotation_1">
+        <dc:Bounds x="366" y="409" width="100" height="30" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNEdge di:id="Association_1_di" cmmnElementRef="Association_1">
+        <di:waypoint xsi:type="dc:Point" x="192" y="358" />
+        <di:waypoint xsi:type="dc:Point" x="192" y="424" />
+        <di:waypoint xsi:type="dc:Point" x="366" y="424" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNEdge>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
