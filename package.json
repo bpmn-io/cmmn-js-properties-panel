@@ -22,8 +22,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "cmmn-js": "^0.3.0",
-    "cmmn-moddle": "^0.3.0",
+    "cmmn-js": "^0.4.2",
+    "cmmn-moddle": "^0.3.2",
     "browserify": "^13.0.0",
     "camunda-cmmn-moddle": "^0.1.0",
     "chai": "~2.2.0",
