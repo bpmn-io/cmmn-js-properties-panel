@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:case id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1" name="A CasePlanModel">
+      <cmmn:planItem id="PlanItem_1" definitionRef="Task_1">
+        <cmmn:entryCriterion id="EntryCriterion_1" sentryRef="Sentry_1" />
+      </cmmn:planItem>
+      <cmmn:planItem id="PlanItem_1jan02e" definitionRef="Task_0meu87s">
+        <cmmn:entryCriterion id="EntryCriterion_2" sentryRef="Sentry_2" />
+      </cmmn:planItem>
+      <cmmn:planItem id="PlanItem_104lzop" definitionRef="Task_1f31ovv">
+        <cmmn:entryCriterion id="EntryCriterion_3" sentryRef="Sentry_3" />
+      </cmmn:planItem>
+      <cmmn:planItem id="PlanItem_10mtvzu" definitionRef="Task_18w0qhc">
+        <cmmn:entryCriterion id="EntryCriterion_4" />
+      </cmmn:planItem>
+      <cmmn:sentry id="Sentry_1">
+        <cmmn:ifPart>
+          <cmmn:condition>CONDITION</cmmn:condition>
+        </cmmn:ifPart>
+      </cmmn:sentry>
+      <cmmn:sentry id="Sentry_2">
+        <cmmn:ifPart />
+      </cmmn:sentry>
+      <cmmn:sentry id="Sentry_3" />
+      <cmmn:task id="Task_1" />
+      <cmmn:task id="Task_0meu87s" />
+      <cmmn:task id="Task_1f31ovv" />
+      <cmmn:task id="Task_18w0qhc" />
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram di:id="CMMNDiagram_1">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape di:id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="85" y="40" width="571" height="143" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PlanItem_1_di" cmmnElementRef="PlanItem_1">
+        <dc:Bounds x="113" y="65" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="EntryCriterion_1_di" cmmnElementRef="EntryCriterion_1">
+        <dc:Bounds x="201" y="90" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PlanItem_1jan02e_di" cmmnElementRef="PlanItem_1jan02e">
+        <dc:Bounds x="247" y="65" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="EntryCriterion_2_di" cmmnElementRef="EntryCriterion_2">
+        <dc:Bounds x="336" y="90" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PlanItem_104lzop_di" cmmnElementRef="PlanItem_104lzop">
+        <dc:Bounds x="379" y="65" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="EntryCriterion_3_di" cmmnElementRef="EntryCriterion_3">
+        <dc:Bounds x="468" y="91" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="PlanItem_10mtvzu_di" cmmnElementRef="PlanItem_10mtvzu">
+        <dc:Bounds x="517" y="68" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape di:id="EntryCriterion_4_di" cmmnElementRef="EntryCriterion_4">
+        <dc:Bounds x="607" y="97" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
