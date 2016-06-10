@@ -16,12 +16,23 @@ var propertiesPanelModule = require('../../../../lib'),
 
 var find = require('lodash/collection/find');
 
+function getCheckbox(container, selector) {
+  return domQuery('input[' + selector + ']', container);
+}
+
 function getSelect(container, selector) {
   return domQuery('select[' + selector + ']', container);
 }
 
 function getStandardEventSelect(container) {
   return getSelect(domQuery('div[data-entry=onPartStandardEvent]', container), 'name=standardEvent');
+}
+
+function getIsStandardEventVisibleCheckbox(container) {
+  return getCheckbox(
+    domQuery('div[data-entry=onPartIsStandardEventVisible]', container),
+    'name=isStandardEventVisible'
+  );
 }
 
 var isContainedIn = function(values, value) {
@@ -216,6 +227,66 @@ describe('onPart-properties', function() {
     });
 
 
+    describe('# isStandardEventVisible', function() {
+
+      it('should fetch is standard event visible (=true)',
+        inject(function(elementRegistry, selection, propertiesPanel) {
+
+          // given
+          onPart = elementRegistry.get('STANDARD_EVENT_VISIBLE_TRUE_di');
+          selection.select(onPart);
+
+          field = getIsStandardEventVisibleCheckbox(propertiesPanel._container);
+          bo = onPart.businessObject;
+
+          // when selecting element
+
+          // then
+          expect(field.checked).to.equal(bo.get('isStandardEventVisible'));
+
+        })
+      );
+
+
+      it('should fetch is standard event visible (=false)',
+        inject(function(elementRegistry, selection, propertiesPanel) {
+
+          // given
+          onPart = elementRegistry.get('STANDARD_EVENT_VISIBLE_FALSE_di');
+          selection.select(onPart);
+
+          field = getIsStandardEventVisibleCheckbox(propertiesPanel._container);
+          bo = onPart.businessObject;
+
+          // when selecting element
+
+          // then
+          expect(field.checked).to.equal(bo.get('isStandardEventVisible'));
+
+        })
+      );
+
+
+      it('should fetch is standard event visible (=undefined)',
+        inject(function(elementRegistry, selection, propertiesPanel) {
+
+          // given
+          onPart = elementRegistry.get('STANDARD_EVENT_VISIBLE_FALSE_di');
+          selection.select(onPart);
+
+          field = getIsStandardEventVisibleCheckbox(propertiesPanel._container);
+          bo = onPart.businessObject;
+
+          // when selecting element
+
+          // then
+          expect(field.checked).to.be.false;
+
+        })
+      );
+
+    });
+
   });
 
 
@@ -292,6 +363,155 @@ describe('onPart-properties', function() {
 
             // then
             expect(bo.get('standardEvent')).to.equal('exit');
+          }));
+
+        });
+
+      });
+
+    });
+
+    describe('# isStandardEventVisible', function() {
+
+      describe('should set is standard event visible to false', function() {
+
+        beforeEach(inject(function(elementRegistry, selection, propertiesPanel) {
+
+          // given
+          onPart = elementRegistry.get('STANDARD_EVENT_VISIBLE_TRUE_di');
+          selection.select(onPart);
+
+          field = getIsStandardEventVisibleCheckbox(propertiesPanel._container);
+          bo = onPart.businessObject;
+
+          // when
+          TestHelper.triggerEvent(field, 'click');
+
+        }));
+
+        describe('in the DOM', function() {
+
+          it('should execute', function() {
+            // then
+            expect(field.checked).to.be.false;
+          });
+
+          it('should undo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+
+            // then
+            expect(field.checked).to.be.true;
+          }));
+
+
+          it('should redo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+            commandStack.redo();
+
+            // then
+            expect(field.checked).to.be.false;
+          }));
+
+        });
+
+        describe('on the business object', function() {
+
+          it('should execute', function() {
+            // then
+            expect(bo.get('isStandardEventVisible')).to.be.false;
+          });
+
+          it('should undo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+
+            // then
+            expect(bo.get('isStandardEventVisible')).to.be.true;
+          }));
+
+
+          it('should redo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+            commandStack.redo();
+
+            // then
+            expect(bo.get('isStandardEventVisible')).to.be.false;
+          }));
+
+        });
+
+      });
+
+
+      describe('should set is standard event visible to true', function() {
+
+        beforeEach(inject(function(elementRegistry, selection, propertiesPanel) {
+
+          // given
+          onPart = elementRegistry.get('STANDARD_EVENT_VISIBLE_FALSE_di');
+          selection.select(onPart);
+
+          field = getIsStandardEventVisibleCheckbox(propertiesPanel._container);
+          bo = onPart.businessObject;
+
+          // when
+          TestHelper.triggerEvent(field, 'click');
+
+        }));
+
+        describe('in the DOM', function() {
+
+          it('should execute', function() {
+            // then
+            expect(field.checked).to.be.true;
+          });
+
+          it('should undo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+
+            // then
+            expect(field.checked).to.be.false;
+          }));
+
+
+          it('should redo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+            commandStack.redo();
+
+            // then
+            expect(field.checked).to.be.true;
+          }));
+
+        });
+
+        describe('on the business object', function() {
+
+          it('should execute', function() {
+            // then
+            expect(bo.get('isStandardEventVisible')).to.be.true;
+          });
+
+          it('should undo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+
+            // then
+            expect(bo.get('isStandardEventVisible')).to.be.false;
+          }));
+
+
+          it('should redo', inject(function(commandStack) {
+            // when
+            commandStack.undo();
+            commandStack.redo();
+
+            // then
+            expect(bo.get('isStandardEventVisible')).to.be.true;
           }));
 
         });
