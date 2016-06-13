@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/cmmn" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:case id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1" name="A CasePlanModel">
+      <cmmn:planItem id="PlanItem_CaseTask_Valid" definitionRef="CaseTask_Valid" />
+      <cmmn:planItem id="PlanItem_ProcessTask_Valid" definitionRef="ProcessTask_Valid" />
+      <cmmn:planItem id="PlanItem_DecisionTask_Valid" definitionRef="DecisionTask_Valid" />
+      <cmmn:planItem id="PlanItem_CaseTask_Invalid" definitionRef="CaseTask_Invalid" />
+      <cmmn:planItem id="PlanItem_DecisionTask_Version" definitionRef="DecisionTask_Version" />
+      <cmmn:caseTask id="CaseTask_Valid" name="CaseTask_Valid" caseRef="myCase" camunda:caseTenantId="tenantOne" />
+      <cmmn:processTask id="ProcessTask_Valid" name="ProcessTask_Valid" camunda:processBinding="deployment" camunda:processTenantId="tenantOne">
+        <cmmn:processRefExpression id="Expression_0dwtw7n">myProcess</cmmn:processRefExpression>
+      </cmmn:processTask>
+      <cmmn:decisionTask id="DecisionTask_Valid" name="DecisionTask_Valid" decisionRef="myDecision" camunda:decisionTenantId="tenantOne" camunda:mapDecisionResult="singleResult" camunda:resultVariable="myResVar" />
+      <cmmn:caseTask id="CaseTask_Invalid" name="CaseTask_Invalid" caseRef="myCase" camunda:caseBinding="version" camunda:caseTenantId="tenantOne" />
+      <cmmn:decisionTask id="DecisionTask_Version" name="DecisionTask_Version" decisionRef="myDecision" camunda:decisionBinding="version" camunda:decisionTenantId="tenantOne" camunda:decisionVersion="2" camunda:mapDecisionResult="singleResult" camunda:resultVariable="myResVar"/>
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_5a66685b-5f57-4e2f-b1d1-acca4fae04b2">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="114" y="63" width="534" height="389" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0s7ywl9_di" cmmnElementRef="PlanItem_CaseTask_Valid">
+        <dc:Bounds x="150" y="96" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1v93ay5_di" cmmnElementRef="PlanItem_ProcessTask_Valid">
+        <dc:Bounds x="153" y="213" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_03mc1xv_di" cmmnElementRef="PlanItem_DecisionTask_Valid">
+        <dc:Bounds x="151" y="324" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1nveh78_di" cmmnElementRef="PlanItem_CaseTask_Invalid">
+        <dc:Bounds x="341" y="94" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1hw2xtq_di" cmmnElementRef="PlanItem_DecisionTask_Version">
+        <dc:Bounds x="347" y="322" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
