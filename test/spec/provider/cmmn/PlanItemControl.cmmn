@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:case id="Case_17rbwq9">
+    <cmmn:casePlanModel id="CasePlanModel_0tijln6">
+      <cmmn:planItem id="PI_MANUAL" definitionRef="Task_0srcl3h">
+        <cmmn:itemControl id="PlanItemControl_1tw1zbl">
+          <cmmn:manualActivationRule id="ManualActivationRule_1llx2bo">
+            <cmmn:condition id="Expression_14numf9">MANUAL</cmmn:condition>
+          </cmmn:manualActivationRule>
+        </cmmn:itemControl>
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_REQUIRED" definitionRef="Task_1oyrrcy">
+        <cmmn:itemControl id="PlanItemControl_053kg2p">
+          <cmmn:requiredRule id="RequiredRule_05pqknc">
+            <cmmn:condition id="Expression_0vx5p0w">REQUIRED</cmmn:condition>
+          </cmmn:requiredRule>
+        </cmmn:itemControl>
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_REPETITION" definitionRef="Task_04ka85s">
+        <cmmn:itemControl id="PlanItemControl_1muc6vg">
+          <cmmn:repetitionRule id="RepetitionRule_0onu1im">
+            <cmmn:condition id="Expression_0sbepfm">REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:itemControl>
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_DEF_MANUAL" definitionRef="Task_0pzjbal" />
+      <cmmn:planItem id="PI_DEF_REQUIRED" definitionRef="Task_1q8mb6k" />
+      <cmmn:planItem id="PI_DEF_REPETITION" definitionRef="Task_0rrl4ss" />
+      <cmmn:planItem id="PI_ALL_RULES" definitionRef="Task_1r1ymt0">
+        <cmmn:itemControl id="PlanItemControl_1hu4f1z">
+          <cmmn:repetitionRule id="RepetitionRule_1jisxhy">
+            <cmmn:condition id="Expression_0sqxklp">ITEM_REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+          <cmmn:requiredRule id="RequiredRule_03rwma4">
+            <cmmn:condition id="Expression_04pjfhg">ITEM_REQUIRED</cmmn:condition>
+          </cmmn:requiredRule>
+          <cmmn:manualActivationRule id="ManualActivationRule_18zyzmy">
+            <cmmn:condition id="Expression_04vj1u0">ITEM_MANUAL</cmmn:condition>
+          </cmmn:manualActivationRule>
+        </cmmn:itemControl>
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_RULES_NO_CONDITION" definitionRef="Task_03t5gme">
+        <cmmn:itemControl>
+          <cmmn:repetitionRule />
+          <cmmn:requiredRule />
+          <cmmn:manualActivationRule />
+        </cmmn:itemControl>
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_WITH_CONTROL" definitionRef="Task_1ke2zpa">
+        <cmmn:itemControl />
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_WITHOUT_ANYTHING" definitionRef="Task_1iww913" />
+      <cmmn:task id="Task_0srcl3h" />
+      <cmmn:task id="Task_1oyrrcy" />
+      <cmmn:task id="Task_04ka85s" />
+      <cmmn:task id="Task_0pzjbal">
+        <cmmn:defaultControl id="PlanItemControl_17bp2cc">
+          <cmmn:manualActivationRule id="ManualActivationRule_0sry5t5">
+            <cmmn:condition id="Expression_0jymlab">MANUAL</cmmn:condition>
+          </cmmn:manualActivationRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_1q8mb6k">
+        <cmmn:defaultControl id="PlanItemControl_0fn4wn5">
+          <cmmn:requiredRule id="RequiredRule_1gl7mow">
+            <cmmn:condition id="Expression_1jh5jha">REQUIRED</cmmn:condition>
+          </cmmn:requiredRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_0rrl4ss">
+        <cmmn:defaultControl id="PlanItemControl_04bu11p">
+          <cmmn:repetitionRule id="RepetitionRule_1xb9r6n">
+            <cmmn:condition id="Expression_18trejf">REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_1r1ymt0">
+        <cmmn:defaultControl id="PlanItemControl_1mfm06i">
+          <cmmn:repetitionRule id="RepetitionRule_0v9u4rw">
+            <cmmn:condition id="Expression_1l9j25e">DEF_REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+          <cmmn:requiredRule id="RequiredRule_1vn7mwh">
+            <cmmn:condition id="Expression_0d7tjkk">DEF_REQUIRED</cmmn:condition>
+          </cmmn:requiredRule>
+          <cmmn:manualActivationRule id="ManualActivationRule_1iec9te">
+            <cmmn:condition id="Expression_041i5z5">DEF_MANUAL</cmmn:condition>
+          </cmmn:manualActivationRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_03t5gme">
+        <cmmn:defaultControl>
+          <cmmn:repetitionRule />
+          <cmmn:requiredRule />
+          <cmmn:manualActivationRule />
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_1ke2zpa">
+        <cmmn:defaultControl />
+      </cmmn:task>
+      <cmmn:task id="Task_1iww913" />
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_5a66685b-5f57-4e2f-b1d1-acca4fae04b2" name="Claims File">
+      <cmmndi:Size xsi:type="dc:Dimension" width="1313.31396484375" height="1009" />
+      <cmmndi:CMMNShape id="CasePlanModel_0tijln6_di" cmmnElementRef="CasePlanModel_0tijln6">
+        <dc:Bounds x="340" y="34" width="553" height="346" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1ffw518_di" cmmnElementRef="PI_MANUAL">
+        <dc:Bounds x="373" y="64" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1gmabxo_di" cmmnElementRef="PI_REQUIRED">
+        <dc:Bounds x="374" y="174" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0939w5w_di" cmmnElementRef="PI_REPETITION">
+        <dc:Bounds x="376" y="278" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1cq3jrq_di" cmmnElementRef="PI_DEF_MANUAL">
+        <dc:Bounds x="515" y="62" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1ikqb4g_di" cmmnElementRef="PI_DEF_REQUIRED">
+        <dc:Bounds x="511" y="177" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0ked9l5_di" cmmnElementRef="PI_DEF_REPETITION">
+        <dc:Bounds x="512" y="280" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1ljrjvr_di" cmmnElementRef="PI_ALL_RULES">
+        <dc:Bounds x="650" y="60" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_02tyf69_di" cmmnElementRef="PI_RULES_NO_CONDITION">
+        <dc:Bounds x="650" y="174" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0d99bnv_di" cmmnElementRef="PI_WITH_CONTROL">
+        <dc:Bounds x="648" y="280" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0ac5gpg_di" cmmnElementRef="PI_WITHOUT_ANYTHING">
+        <dc:Bounds x="773" y="61" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
