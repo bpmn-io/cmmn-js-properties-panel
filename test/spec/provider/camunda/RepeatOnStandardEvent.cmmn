@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/cmmn" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:case id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1" name="A CasePlanModel">
+      <cmmn:planItem id="PI_Task_1" definitionRef="Task_1">
+        <cmmn:itemControl id="PlanItemControl_17x4qs2">
+          <cmmn:repetitionRule id="RepetitionRule_0sojihk" camunda:repeatOnStandardEvent="complete">
+            <cmmn:condition id="Expression_1roz0cd">ITEM_REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:itemControl>
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_Task_2" definitionRef="Task_2">
+        <cmmn:itemControl id="PlanItemControl_129ivg4">
+          <cmmn:repetitionRule id="RepetitionRule_1ghdq2w">
+            <cmmn:condition id="Expression_1ih32b8">ITEM_RULE</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:itemControl>
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_Task_3" definitionRef="Task_3">
+        <cmmn:itemControl id="PlanItemControl_1dxs948">
+          <cmmn:repetitionRule id="RepetitionRule_14prk36" camunda:repeatOnStandardEvent="complete">
+            <cmmn:condition id="Expression_075zrxj">REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:itemControl>
+        <cmmn:entryCriterion id="EntryCriterion_1ephsxz" sentryRef="Sentry_1g8dhxy" />
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_Task_4" definitionRef="Task_4">
+        <cmmn:entryCriterion id="EntryCriterion_0yb7ahl" sentryRef="Sentry_1wnfn3k" />
+      </cmmn:planItem>
+      <cmmn:planItem id="PI_Task_5" definitionRef="Task_5" />
+      <cmmn:sentry id="Sentry_1g8dhxy" />
+      <cmmn:sentry id="Sentry_1wnfn3k" />
+      <cmmn:task id="Task_1">
+        <cmmn:defaultControl id="PlanItemControl_1ulxbit">
+          <cmmn:repetitionRule id="RepetitionRule_1rvmgd2" camunda:repeatOnStandardEvent="complete">
+            <cmmn:condition id="Expression_008wtmq">DEF_REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_2">
+        <cmmn:defaultControl id="PlanItemControl_0sq1scf">
+          <cmmn:repetitionRule id="RepetitionRule_1yxcvzz">
+            <cmmn:condition id="Expression_06rp0qx">DEF_RULE</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_3" />
+      <cmmn:task id="Task_4">
+        <cmmn:defaultControl id="PlanItemControl_096x2kd">
+          <cmmn:repetitionRule id="RepetitionRule_1tqftn2" camunda:repeatOnStandardEvent="complete">
+            <cmmn:condition id="Expression_009021p">REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+      <cmmn:task id="Task_5">
+        <cmmn:defaultControl id="PlanItemControl_0r6wxa2">
+          <cmmn:repetitionRule id="RepetitionRule_0jjrj08" camunda:repeatOnStandardEvent="complete">
+            <cmmn:condition id="Expression_0c25mmb">REPETITION</cmmn:condition>
+          </cmmn:repetitionRule>
+        </cmmn:defaultControl>
+      </cmmn:task>
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_5a66685b-5f57-4e2f-b1d1-acca4fae04b2">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="114" y="63" width="534" height="389" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1_di" cmmnElementRef="PI_Task_1">
+        <dc:Bounds x="150" y="96" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0lng047_di" cmmnElementRef="PI_Task_2">
+        <dc:Bounds x="286" y="97" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_14vgxn5_di" cmmnElementRef="PI_Task_3">
+        <dc:Bounds x="149" y="204" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_1ephsxz_di" cmmnElementRef="EntryCriterion_1ephsxz">
+        <dc:Bounds x="139" y="233" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0icwap1_di" cmmnElementRef="PI_Task_4">
+        <dc:Bounds x="287" y="205" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="EntryCriterion_0yb7ahl_di" cmmnElementRef="EntryCriterion_0yb7ahl">
+        <dc:Bounds x="277" y="231" width="20" height="28" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_07nwiqt_di" cmmnElementRef="PI_Task_5">
+        <dc:Bounds x="424" y="96" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
