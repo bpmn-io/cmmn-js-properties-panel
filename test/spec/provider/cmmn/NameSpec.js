@@ -8,6 +8,7 @@ var TestContainer = require('mocha-test-container-support');
 
 var propertiesPanelModule = require('../../../../lib'),
     domQuery = require('min-dom/lib/query'),
+    domClasses = require('min-dom/lib/classes'),
     coreModule = require('cmmn-js/lib/core'),
     selectionModule = require('diagram-js/lib/features/selection'),
     modelingModule = require('cmmn-js/lib/features/modeling'),
@@ -1064,6 +1065,48 @@ describe('name-properties', function() {
 
       it('DiscretionaryConnection', expectVisible('DiscretionaryConnection_1', false));
       it('Association', expectVisible('Association_1_di', false));
+
+    });
+
+  });
+
+
+  describe('validation', function() {
+
+    describe('warnings', function() {
+
+      it('should not be shown if item name is used',
+        inject(function(elementRegistry, selection, propertiesPanel) {
+
+          // given
+          var shape = elementRegistry.get('PI_HumanTask_3');
+          var container = propertiesPanel._container;
+          
+          // when
+          selection.select(shape);
+
+          // then
+          var field = getNameInput(container);
+          expect(domClasses(field).has('warning')).to.be.false;
+        })
+      );
+
+
+      it('should be shown if definition name is used',
+        inject(function(elementRegistry, selection, propertiesPanel) {
+
+          // given
+          var shape = elementRegistry.get('PI_HumanTask_2');
+          var container = propertiesPanel._container;
+
+          // when
+          selection.select(shape);
+
+          // then
+          var field = getNameInput(container);
+          expect(domClasses(field).has('warning')).to.be.true;
+        })
+      );
 
     });
 
