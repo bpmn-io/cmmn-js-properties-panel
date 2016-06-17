@@ -284,7 +284,7 @@ describe('callable-extension-properties', function() {
 
         it('should execute', function() {
           expect(field.value).to.equal('latest');
-          expect(domClasses(versionField.parentElement).has('pp-hidden')).to.be.true;
+          expect(domClasses(versionField.parentElement).has('cpp-hidden')).to.be.true;
         });
 
         it('should undo', inject(function(commandStack) {
@@ -293,7 +293,7 @@ describe('callable-extension-properties', function() {
 
           // then
           expect(field.value).to.equal('version');
-          expect(domClasses(versionField.parentElement).has('pp-hidden')).to.be.false;
+          expect(domClasses(versionField.parentElement).has('cpp-hidden')).to.be.false;
         }));
 
 
@@ -304,7 +304,7 @@ describe('callable-extension-properties', function() {
 
           // then
           expect(field.value).to.equal('latest');
-          expect(domClasses(versionField.parentElement).has('pp-hidden')).to.be.true;
+          expect(domClasses(versionField.parentElement).has('cpp-hidden')).to.be.true;
         }));
 
       });
@@ -519,7 +519,7 @@ describe('callable-extension-properties', function() {
         it('should execute', function() {
           // then
           expect(field.value).to.equal('');
-          expect(domClasses(mapDecisionResultField).has('pp-hidden')).to.be.true;
+          expect(domClasses(mapDecisionResultField).has('cpp-hidden')).to.be.true;
         });
 
         it('should undo', inject(function(commandStack) {
@@ -528,7 +528,7 @@ describe('callable-extension-properties', function() {
 
           // then
           expect(field.value).to.equal('myResVar');
-          expect(domClasses(mapDecisionResultField).has('pp-hidden')).to.be.false;
+          expect(domClasses(mapDecisionResultField).has('cpp-hidden')).to.be.false;
         }));
 
 
@@ -539,7 +539,7 @@ describe('callable-extension-properties', function() {
 
           // then
           expect(field.value).to.equal('');
-          expect(domClasses(mapDecisionResultField).has('pp-hidden')).to.be.true;
+          expect(domClasses(mapDecisionResultField).has('cpp-hidden')).to.be.true;
         }));
 
       });

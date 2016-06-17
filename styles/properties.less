@@ -7,7 +7,7 @@
   src: url(@font-eot) format('embedded-opentype'),
        url(@font-woff) format('woff'),
        url(@font-ttf) format('truetype'),
-       url(@pp-font-svg) format('svg');
+       url(@cpp-font-svg) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -31,7 +31,7 @@
   button,
   textarea {
     padding: 3px 6px;
-    border: 1px solid @pp-color-gray-light;
+    border: 1px solid @cpp-color-gray-light;
 
     &:focus {
       .focus();
@@ -40,14 +40,14 @@
     &.invalid {
       .invalid();
       &:focus {
-        box-shadow: 0 0 1px 2px fade(@pp-color-error, 20%);
+        box-shadow: 0 0 1px 2px fade(@cpp-color-error, 20%);
       }
     }
 
     &.warning {
       &:focus {
         .warning();
-        box-shadow: 0 0 1px 2px fade(@pp-color-warning, 20%);
+        box-shadow: 0 0 1px 2px fade(@cpp-color-warning, 20%);
       }
     }
   }
@@ -88,16 +88,16 @@
   }
 }
 
-.pp-warning-message {
-  color: @pp-color-warning;
+.cpp-warning-message {
+  color: @cpp-color-warning;
 }
 
-.pp-error-message,
-.pp-error-message.pp-entry-link {
-  color: @pp-color-error;
+.cpp-error-message,
+.cpp-error-message.cpp-entry-link {
+  color: @cpp-color-error;
 }
 
-.pp-row {
+.cpp-row {
   margin-top: 10px;
   margin-bottom: 10px;
   &:first-of-type {
@@ -106,24 +106,26 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+}
 
+.cpp-action {
   button {
     position: relative;
     margin-left: 10px;
   }
 }
 
-.pp-textfield,
-.pp-textarea {
+.cpp-textfield,
+.cpp-textarea {
   margin-bottom: 3px;
 }
 
-.pp-radios-group {
+.cpp-radios-group {
   list-style: none;
   padding: 0;
   margin: 0 0 9px 0;
 
-  .pp-radio-wrapper {
+  .cpp-radio-wrapper {
     margin: 6px 0;
   }
 
@@ -138,8 +140,8 @@
   }
 }
 
-.pp-radios-group,
-.pp-checkbox {
+.cpp-radios-group,
+.cpp-checkbox {
   input {
     margin-left: 0;
   }
@@ -151,7 +153,7 @@
   }
 }
 
-.pp-textfield {
+.cpp-textfield {
   input {
     padding-right: 28px;
   }
@@ -164,11 +166,11 @@
   }
 }
 
-.pp-combo-input {
+.cpp-combo-input {
   margin-top: 7px;
 }
 
-.pp-select {
+.cpp-select {
   select {
     height: 23px;
   }
@@ -178,8 +180,8 @@
   }
 }
 
-.pp-select,
-.pp-element-list {
+.cpp-select,
+.cpp-element-list {
 
   button {
     &.add,
@@ -201,7 +203,7 @@
 .djs-properties-entry {
   margin-bottom: 9px;
 
-  .pp-field-wrapper {
+  .cpp-field-wrapper {
     position: relative;
 
     input[readonly] + .clear {
@@ -210,26 +212,26 @@
   }
 }
 
-.pp-hidden {
+.cpp-hidden {
   display: none;
 }
 
-label.pp-hidden {
-  .pp-hidden;
+label.cpp-hidden {
+  .cpp-hidden;
 }
 
-.pp-table-add-row {
+.cpp-table-add-row {
   > button {
     position: relative;
     margin-left: 10px;
   }
 }
 
-.pp-table {
+.cpp-table {
   margin-top: 10px;
 }
 
-.pp-table-row {
+.cpp-table-row {
   margin-bottom: 2px;
   overflow: hidden;
 
@@ -245,16 +247,16 @@ label.pp-hidden {
   > label,
   > input {
 
-    &.pp-table-row-columns-1 {
+    &.cpp-table-row-columns-1 {
       width: 100%;
-      &.pp-table-row-removable {
+      &.cpp-table-row-removable {
         width: ~"calc(100% - 24px)";
       }
     }
 
-    &.pp-table-row-columns-2 {
+    &.cpp-table-row-columns-2 {
       width: 50%;
-      &.pp-table-row-removable {
+      &.cpp-table-row-removable {
         width: ~"calc(50% - 12px)";
       }
       &:nth-child(2) {
@@ -272,20 +274,20 @@ label.pp-hidden {
 .djs-properties-static {
   margin-bottom: 0;
   margin-top: 0;
-  border: 1px solid @pp-color-gray-light;
+  border: 1px solid @cpp-color-gray-light;
   background-color: white;
   padding: 3px 6px;
   font: 13.3333px Arial;
   width: 100%;
 }
 
-.pp-entry-hint,
-.pp-entry-link {
+.cpp-entry-hint,
+.cpp-entry-link {
   cursor: pointer;
-  color: @pp-color-primary;
+  color: @cpp-color-primary;
 }
 
-.pp-icon-warning:before {
+.cpp-icon-warning:before {
   .icon-font();
   content: '\E806';
 }

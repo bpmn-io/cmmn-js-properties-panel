@@ -52,7 +52,7 @@ function getRemoveDefaultControlButton(container) {
 }
 
 function isHidden(node) {
-  return domClasses(node).has('pp-hidden');
+  return domClasses(node).has('cpp-hidden');
 }
 
 function isAddItemControlButtonHidden(container) {

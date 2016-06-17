@@ -1,17 +1,17 @@
 .invalid() {
-  border-color: @pp-color-error;
-  background: @pp-color-error-bg;
+  border-color: @cpp-color-error;
+  background: @cpp-color-error-bg;
 }
 
 .warning() {
-  border-color: @pp-color-warning;
+  border-color: @cpp-color-warning;
 }
 
 .focus() {
-  // outline-color: @pp-color-primary;
+  // outline-color: @cpp-color-primary;
   outline: none;
-  border-color: @pp-color-primary;
-  box-shadow: 0 0 1px 2px fade(@pp-color-primary, 20%);
+  border-color: @cpp-color-primary;
+  box-shadow: 0 0 1px 2px fade(@cpp-color-primary, 20%);
 }
 
 
@@ -32,7 +32,7 @@
 }
 
 .overlay() {
-  background-color: @pp-color-gray-lighter;
+  background-color: @cpp-color-gray-lighter;
 }
 
 .action-button() {
@@ -42,8 +42,8 @@
   width: 24px;
   overflow: hidden;
   cursor: pointer;
-  background-color: @pp-color-gray-lighter;
-  border: 1px solid @pp-color-gray-light;
+  background-color: @cpp-color-gray-lighter;
+  border: 1px solid @cpp-color-gray-light;
 
   > span {
     display: none;
@@ -63,7 +63,7 @@
   }
 
   &:hover {
-    color: @pp-color-primary;
+    color: @cpp-color-primary;
   }
 }
 
@@ -71,9 +71,9 @@
   font-weight: bolder;
   display: inline-block;
   vertical-align: middle;
-  color: @pp-color-gray;
+  color: @cpp-color-gray;
   &[for] {
     cursor: pointer;
   }
-  &.pp-hidden { display: none; }
+  &.cpp-hidden { display: none; }
 }
