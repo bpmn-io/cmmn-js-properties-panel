@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/cmmn" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:case id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1" name="A CasePlanModel">
+      <cmmn:planItem id="PlanItem_CaseTask_Invalid" name="CaseTask_Invalid" definitionRef="CaseTask_Invalid" />
+      <cmmn:planItem id="PlanItem_CaseTask_Source" name="CaseTask_Source" definitionRef="CaseTask_Source" />
+      <cmmn:planItem id="PlanItem_ProcessTask_Invalid" name="ProcessTask_Invalid" definitionRef="ProcessTask_Invalid" />
+      <cmmn:planItem id="PlanItem_ProcessTask_SourceExpression" name="ProcessTask_SourceExpression" definitionRef="ProcessTask_SourceExpression" />
+      <cmmn:planItem id="PlanItem_ProcessTask_In_ALL" name="ProcessTask_In_ALL" definitionRef="ProcessTask_In_ALL" />
+      <cmmn:planItem id="PlanItem_CaseTask_Out_All" name="CaseTask_Out_All" definitionRef="CaseTask_Out_All" />
+      <cmmn:planItem id="PlanItem_ProcessTask_BusinessKey" name="ProcessTask_BusinessKey" definitionRef="ProcessTask_BusinessKey" />
+      <cmmn:planItem id="PlanItem_CaseTask_Empty" name="CaseTask_Empty" definitionRef="CaseTask_Empty" />
+      <cmmn:caseTask id="CaseTask_Invalid" name="CaseTask_Invalid">
+        <cmmn:extensionElements>
+          <camunda:in source="" />
+        </cmmn:extensionElements>
+      </cmmn:caseTask>
+      <cmmn:caseTask id="CaseTask_Source" name="CaseTask_Source">
+        <cmmn:extensionElements>
+          <camunda:in source="mySource" target="myTarget" local="true" />
+        </cmmn:extensionElements>
+      </cmmn:caseTask>
+      <cmmn:processTask id="ProcessTask_Invalid" name="ProcessTask_Invalid">
+        <cmmn:extensionElements>
+          <camunda:in sourceExpression="" />
+        </cmmn:extensionElements>
+      </cmmn:processTask>
+      <cmmn:processTask id="ProcessTask_SourceExpression" name="ProcessTask_SourceExpression">
+        <cmmn:extensionElements>
+          <camunda:in sourceExpression="${mySourceExpression}" target="myTarget" local="true" />
+        </cmmn:extensionElements>
+      </cmmn:processTask>
+      <cmmn:processTask id="ProcessTask_In_ALL" name="ProcessTask_In_ALL">
+        <cmmn:extensionElements>
+          <camunda:in variables="all" />
+        </cmmn:extensionElements>
+      </cmmn:processTask>
+      <cmmn:caseTask id="CaseTask_Out_All" name="CaseTask_Out_All">
+        <cmmn:extensionElements>
+          <camunda:out variables="all" />
+        </cmmn:extensionElements>
+      </cmmn:caseTask>
+      <cmmn:processTask id="ProcessTask_BusinessKey" name="ProcessTask_BusinessKey">
+        <cmmn:extensionElements>
+          <camunda:in businessKey="#{execution.processBusinessKey}" />
+        </cmmn:extensionElements>
+      </cmmn:processTask>
+      <cmmn:caseTask id="CaseTask_Empty" name="CaseTask_Empty" />
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_5a66685b-5f57-4e2f-b1d1-acca4fae04b2">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="114" y="63" width="534" height="389" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1laenk5_di" cmmnElementRef="PlanItem_CaseTask_Invalid">
+        <dc:Bounds x="150" y="96" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_13wwzdq_di" cmmnElementRef="PlanItem_CaseTask_Source">
+        <dc:Bounds x="281" y="96" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0widjum_di" cmmnElementRef="PlanItem_ProcessTask_Invalid">
+        <dc:Bounds x="150" y="200" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1k0b73f_di" cmmnElementRef="PlanItem_ProcessTask_SourceExpression">
+        <dc:Bounds x="281" y="200" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0t30vyc_di" cmmnElementRef="PlanItem_ProcessTask_In_ALL">
+        <dc:Bounds x="427" y="200" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_17v6pwo_di" cmmnElementRef="PlanItem_CaseTask_Out_All">
+        <dc:Bounds x="428" y="94" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0goigoe_di" cmmnElementRef="PlanItem_ProcessTask_BusinessKey">
+        <dc:Bounds x="145" y="316" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_197i8xv_di" cmmnElementRef="PlanItem_CaseTask_Empty">
+        <dc:Bounds x="280" y="313" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
