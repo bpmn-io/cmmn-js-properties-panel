@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/cmmn" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:case id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1" name="A CasePlanModel">
+      <cmmn:planItem id="PlanItem_HumanTask_Script_Invalid" name="PlanItem_HumanTask_Script_Invalid" definitionRef="HumanTask_Script_Invalid" />
+      <cmmn:planItem id="PlanItem_HumanTask_Script" name="PlanItem_HumanTask_Script" definitionRef="HumanTask_Script" />
+      <cmmn:planItem id="PlanItem_HumanTask_Script_EXTERNAL" name="PlanItem_HumanTask_Script_EXTERNAL" definitionRef="HumanTask_Script_EXTERNAL" />
+      <cmmn:humanTask id="HumanTask_Script_Invalid" name="HumanTask_Script_Invalid">
+        <cmmn:extensionElements>
+          <camunda:taskListener>
+            <camunda:script />
+          </camunda:taskListener>
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_Script" name="HumanTask_Script">
+        <cmmn:extensionElements>
+          <camunda:taskListener event="create">
+            <camunda:script scriptFormat="groovy">myScript</camunda:script>
+          </camunda:taskListener>
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_Script_EXTERNAL" name="HumanTask_Script_EXTERNAL">
+        <cmmn:extensionElements>
+          <camunda:taskListener event="create">
+            <camunda:script scriptFormat="groovy" resource="myScript.js" />
+          </camunda:taskListener>
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_5a66685b-5f57-4e2f-b1d1-acca4fae04b2">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="114" y="63" width="534" height="389" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_01zulvx_di" cmmnElementRef="PlanItem_HumanTask_Script_Invalid">
+        <dc:Bounds x="148" y="78" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_02kz8sh_di" cmmnElementRef="PlanItem_HumanTask_Script">
+        <dc:Bounds x="305" y="78" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_17swmz4_di" cmmnElementRef="PlanItem_HumanTask_Script_EXTERNAL">
+        <dc:Bounds x="459" y="78" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>

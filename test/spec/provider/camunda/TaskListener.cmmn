@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmmn:definitions xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/cmmn" id="Test" targetNamespace="http://bpmn.io/schema/cmmn">
+  <cmmn:case id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1" name="A CasePlanModel">
+      <cmmn:planItem id="PlanItem_HumanTask_Class_Invalid" name="PlanItem_HumanTask_Class_Invalid" definitionRef="HumanTask_Class_Invalid" />
+      <cmmn:planItem id="PlanItem_HumanTask_Class" name="PlanItem_HumanTask_Class" definitionRef="HumanTask_Class" />
+      <cmmn:planItem id="PlanItem_HumanTask_Expression_Invalid" name="PlanItem_HumanTask_Expression_Invalid" definitionRef="HumanTask_Expression_Invalid" />
+      <cmmn:planItem id="PlanItem_HumanTask_Expression" name="PlanItem_HumanTask_Expression" definitionRef="HumanTask_Expression" />
+      <cmmn:planItem id="PlanItem_HumanTask_DelegateExpression_Invalid" name="PlanItem_HumanTask_DelegateExpression_Invalid" definitionRef="HumanTask_DelegateExpression_Invalid" />
+      <cmmn:planItem id="PlanItem_HumanTask_DelegateExpression" name="PlanItem_HumanTask_DelegateExpression" definitionRef="HumanTask_DelegateExpression" />
+      <cmmn:planItem id="PlanItem_HumanTask_Empty" name="PlanItem_HumanTask_Empty" definitionRef="HumanTask_Empty" />
+      <cmmn:humanTask id="HumanTask_Class_Invalid" name="HumanTask_Class_Invalid">
+        <cmmn:extensionElements>
+          <camunda:taskListener />
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_Class" name="HumanTask_Class">
+        <cmmn:extensionElements>
+          <camunda:taskListener event="create" class="myClass" />
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_Expression_Invalid" name="HumanTask_Expression_Invalid">
+        <cmmn:extensionElements>
+          <camunda:taskListener expression="" />
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_Expression" name="HumanTask_Expression">
+        <cmmn:extensionElements>
+          <camunda:taskListener event="create" expression="${myExpression}" />
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_DelegateExpression_Invalid" name="HumanTask_DelegateExpression_Invalid">
+        <cmmn:extensionElements>
+          <camunda:taskListener delegateExpression="" />
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_DelegateExpression" name="HumanTask_DelegateExpression">
+        <cmmn:extensionElements>
+          <camunda:taskListener event="create" delegateExpression="${myDelegateExpression}" />
+        </cmmn:extensionElements>
+      </cmmn:humanTask>
+      <cmmn:humanTask id="HumanTask_Empty" name="HumanTask_Empty" />
+    </cmmn:casePlanModel>
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_5a66685b-5f57-4e2f-b1d1-acca4fae04b2">
+      <cmmndi:Size xsi:type="dc:Dimension" width="500" height="500" />
+      <cmmndi:CMMNShape id="DI_CasePlanModel_1" cmmnElementRef="CasePlanModel_1">
+        <dc:Bounds x="114" y="63" width="534" height="389" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0f3g1d9_di" cmmnElementRef="PlanItem_HumanTask_Class_Invalid">
+        <dc:Bounds x="146" y="177" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0h5azoz_di" cmmnElementRef="PlanItem_HumanTask_Class">
+        <dc:Bounds x="305" y="177" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_178sbay_di" cmmnElementRef="PlanItem_HumanTask_Expression_Invalid">
+        <dc:Bounds x="148" y="275" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1tlxf14_di" cmmnElementRef="PlanItem_HumanTask_Expression">
+        <dc:Bounds x="305" y="275" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_14u1klk_di" cmmnElementRef="PlanItem_HumanTask_DelegateExpression_Invalid">
+        <dc:Bounds x="459" y="177" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_0sjjbxj_di" cmmnElementRef="PlanItem_HumanTask_DelegateExpression">
+        <dc:Bounds x="459" y="275" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape id="PlanItem_1betqi9_di" cmmnElementRef="PlanItem_HumanTask_Empty">
+        <dc:Bounds x="225" y="363" width="100" height="80" />
+        <cmmndi:CMMNLabel />
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
