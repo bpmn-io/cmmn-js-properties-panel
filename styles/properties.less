@@ -29,7 +29,8 @@
 
   input,
   button,
-  textarea {
+  textarea,
+  [contenteditable] {
     padding: 3px 6px;
     border: 1px solid @cpp-color-gray-light;
 
@@ -54,13 +55,28 @@
 
 
   [type=text],
+  [contenteditable],
   textarea,
   select {
     width: 100%;
   }
 
+  [contenteditable],
   textarea {
     resize: vertical;
+  }
+
+  [contenteditable] {
+    outline: 0px solid transparent;
+    background-color: white;
+
+    overflow-y: auto;
+
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
   }
 
   label {
@@ -116,7 +132,7 @@
 }
 
 .cpp-textfield,
-.cpp-textarea {
+.cpp-textbox {
   margin-bottom: 3px;
 }
 

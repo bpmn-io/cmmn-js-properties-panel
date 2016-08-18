@@ -16,8 +16,8 @@ var propertiesPanelModule = require('../../../../lib'),
     getBusinessObject = require('cmmn-js/lib/util/ModelUtil').getBusinessObject;
 
 
-function getTextArea(container, selector) {
-  return domQuery('[data-entry=caseName] textarea[' + selector + ']', container);
+function getTextBox(container, selector) {
+  return domQuery('[data-entry=caseName] [name=' + selector + ']', container);
 }
 
 function getInput(container, selector) {
@@ -78,13 +78,13 @@ describe('case-properties', function() {
     it('should fetch the name for case', inject(function(elementRegistry, selection, propertiesPanel) {
 
       // given
-      field = getTextArea(propertiesPanel._container, 'name');
+      field = getTextBox(propertiesPanel._container, 'name');
 
       // when
       TestHelper.triggerValue(field, 'foo', 'change');
 
       // then
-      expect(field.value).to.equal(bo.get('name'));
+      expect(field.textContent).to.equal(bo.get('name'));
 
     }));
 
@@ -117,7 +117,7 @@ describe('case-properties', function() {
         selection.select(item);
 
         bo = item.businessObject.$parent;
-        field = getTextArea(propertiesPanel._container, 'name');
+        field = getTextBox(propertiesPanel._container, 'name');
 
         // when
         TestHelper.triggerValue(field, 'foo', 'change');
@@ -128,7 +128,7 @@ describe('case-properties', function() {
       describe('in the DOM', function() {
 
         it('should execute', function() {
-          expect(field.value).to.equal('foo');
+          expect(field.textContent).to.equal('foo');
         });
 
         it('should undo', inject(function(commandStack) {
@@ -136,7 +136,7 @@ describe('case-properties', function() {
           commandStack.undo();
 
           // then
-          expect(field.value).to.equal('myCase');
+          expect(field.textContent).to.equal('myCase');
         }));
 
 
@@ -146,7 +146,7 @@ describe('case-properties', function() {
           commandStack.redo();
 
           // then
-          expect(field.value).to.equal('foo');
+          expect(field.textContent).to.equal('foo');
         }));
 
       });

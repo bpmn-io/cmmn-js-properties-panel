@@ -26,8 +26,8 @@ function getSelect(container, selector) {
   return domQuery('select[id="' + selector + '"]', container);
 }
 
-function getTextarea(container, selector) {
-  return domQuery('textarea[name="' + selector + '"]', container);
+function getTextbox(container, selector) {
+  return domQuery('[name="' + selector + '"]', container);
 }
 
 function getTaskListeners(extensionElements) {
@@ -157,12 +157,12 @@ describe('script-properties', function() {
 
       it('should fetch the script of a task listener', inject(function(propertiesPanel) {
 
-        var field = getTextarea(propertiesPanel._container, 'value');
+        var field = getTextbox(propertiesPanel._container, 'value');
 
         // when selecting element
 
         // then
-        expect(field.value).to.equal(listeners[0].get('script').get('value'));
+        expect(field.textContent).to.equal(listeners[0].get('script').get('value'));
 
       }));
 
@@ -283,7 +283,7 @@ describe('script-properties', function() {
         it('should be shown if scriptType is selected and script is empty', inject(function(propertiesPanel) {
 
           var scriptType = getSelect(propertiesPanel._container, 'camunda-scriptType-select');
-          var field = getTextarea(propertiesPanel._container, 'value');
+          var field = getTextbox(propertiesPanel._container, 'value');
 
           // when selecting element
 
@@ -665,7 +665,7 @@ describe('script-properties', function() {
         var bo = item.businessObject.definitionRef;
         listeners = getTaskListeners(bo.get('extensionElements'));
 
-        field = getTextarea(propertiesPanel._container, 'value');
+        field = getTextbox(propertiesPanel._container, 'value');
 
         // select existing task listener
         selectFirstListener(propertiesPanel);
@@ -679,7 +679,7 @@ describe('script-properties', function() {
       describe('in the DOM', function() {
 
         it('should execute', function() {
-          expect(field.value).to.equal('FOO');
+          expect(field.textContent).to.equal('FOO');
         });
 
         it('should undo', inject(function(commandStack) {
@@ -687,7 +687,7 @@ describe('script-properties', function() {
           commandStack.undo();
 
           // then
-          expect(field.value).to.equal('myScript');
+          expect(field.textContent).to.equal('myScript');
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -696,7 +696,7 @@ describe('script-properties', function() {
           commandStack.redo();
 
           // then
-          expect(field.value).to.equal('FOO');
+          expect(field.textContent).to.equal('FOO');
         }));
 
       });

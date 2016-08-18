@@ -16,7 +16,7 @@ var propertiesPanelModule = require('../../../../lib'),
 
 
 function getInput(container, selector) {
-  return domQuery('textarea[' + selector + ']', container);
+  return domQuery('[' + selector + ']', container);
 }
 
 function getNameInput(container) {
@@ -83,7 +83,7 @@ describe('name-properties', function() {
       // when selecting element
 
       // then
-      expect(field.value).to.equal(bo.get('name'));
+      expect(field.textContent).to.equal(bo.get('name'));
 
     }));
 
@@ -100,7 +100,7 @@ describe('name-properties', function() {
       // when selecting element
 
       // then
-      expect(field.value).to.equal(bo.get('name'));
+      expect(field.textContent).to.equal(bo.get('name'));
 
     }));
 
@@ -118,7 +118,7 @@ describe('name-properties', function() {
         // when selecting element
 
         // then
-        expect(field.value).to.equal(bo.get('name'));
+        expect(field.textContent).to.equal(bo.get('name'));
 
       })
     );
@@ -137,7 +137,7 @@ describe('name-properties', function() {
         // when selecting element
 
         // then
-        expect(field.value).to.equal(bo.get('name'));
+        expect(field.textContent).to.equal(bo.get('name'));
 
       })
     );
@@ -155,7 +155,7 @@ describe('name-properties', function() {
       // when selecting element
 
       // then
-      expect(field.value).to.equal(bo.get('name'));
+      expect(field.textContent).to.equal(bo.get('name'));
 
     }));
 
@@ -173,8 +173,8 @@ describe('name-properties', function() {
       // when selecting element
 
       // then
-      expect(field.value).not.to.equal(bo.get('name'));
-      expect(field.value).to.equal(definition.get('name'));
+      expect(field.textContent).not.to.equal(bo.get('name'));
+      expect(field.textContent).to.equal(definition.get('name'));
 
     }));
 
@@ -191,7 +191,7 @@ describe('name-properties', function() {
       // when selecting element
 
       // then
-      expect(field.value).to.equal(bo.get('name'));
+      expect(field.textContent).to.equal(bo.get('name'));
 
     }));
 
@@ -208,7 +208,7 @@ describe('name-properties', function() {
       // when selecting element
 
       // then
-      expect(field.value).to.equal(definition.get('name'));
+      expect(field.textContent).to.equal(definition.get('name'));
 
     }));
 
@@ -225,7 +225,7 @@ describe('name-properties', function() {
       // when selecting element
 
       // then
-      expect(field.value).to.equal(bo.get('text'));
+      expect(field.textContent).to.equal(bo.get('text'));
 
     }));
 
@@ -258,7 +258,7 @@ describe('name-properties', function() {
         describe('in the DOM', function() {
 
           it('should execute', function() {
-            expect(field.value).to.equal('foo');
+            expect(field.textContent).to.equal('foo');
           });
 
           it('should undo', inject(function(commandStack) {
@@ -266,7 +266,7 @@ describe('name-properties', function() {
             commandStack.undo();
 
             // then
-            expect(field.value).to.equal('DIAGRAM');
+            expect(field.textContent).to.equal('DIAGRAM');
           }));
 
 
@@ -276,7 +276,7 @@ describe('name-properties', function() {
             commandStack.redo();
 
             // then
-            expect(field.value).to.equal('foo');
+            expect(field.textContent).to.equal('foo');
           }));
 
         });
@@ -330,7 +330,7 @@ describe('name-properties', function() {
         describe('in the DOM', function() {
 
           it('should execute', function() {
-            expect(field.value).to.equal('foo');
+            expect(field.textContent).to.equal('foo');
           });
 
           it('should undo', inject(function(commandStack) {
@@ -338,7 +338,7 @@ describe('name-properties', function() {
             commandStack.undo();
 
             // then
-            expect(field.value).to.equal('A CasePlanModel');
+            expect(field.textContent).to.equal('A CasePlanModel');
           }));
 
 
@@ -348,7 +348,7 @@ describe('name-properties', function() {
             commandStack.redo();
 
             // then
-            expect(field.value).to.equal('foo');
+            expect(field.textContent).to.equal('foo');
           }));
 
         });
@@ -403,7 +403,7 @@ describe('name-properties', function() {
           describe('in the DOM', function() {
 
             it('should execute', function() {
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             });
 
             it('should undo', inject(function(commandStack) {
@@ -411,7 +411,7 @@ describe('name-properties', function() {
               commandStack.undo();
 
               // then
-              expect(field.value).to.equal('ITEM');
+              expect(field.textContent).to.equal('ITEM');
             }));
 
 
@@ -421,7 +421,7 @@ describe('name-properties', function() {
               commandStack.redo();
 
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             }));
 
           });
@@ -474,7 +474,7 @@ describe('name-properties', function() {
           describe('in the DOM', function() {
 
             it('should execute', function() {
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             });
 
             it('should undo', inject(function(commandStack) {
@@ -482,7 +482,7 @@ describe('name-properties', function() {
               commandStack.undo();
 
               // then
-              expect(field.value).to.equal('');
+              expect(field.textContent).to.equal('');
             }));
 
 
@@ -492,7 +492,7 @@ describe('name-properties', function() {
               commandStack.redo();
 
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             }));
 
           });
@@ -545,7 +545,7 @@ describe('name-properties', function() {
           describe('in the DOM', function() {
 
             it('should execute', function() {
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             });
 
             it('should undo', inject(function(commandStack) {
@@ -553,7 +553,7 @@ describe('name-properties', function() {
               commandStack.undo();
 
               // then
-              expect(field.value).to.equal('');
+              expect(field.textContent).to.equal('');
             }));
 
 
@@ -563,7 +563,7 @@ describe('name-properties', function() {
               commandStack.redo();
 
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             }));
 
           });
@@ -614,7 +614,7 @@ describe('name-properties', function() {
 
           it('should execute', function() {
             // then
-            expect(field.value).to.equal('DEF');
+            expect(field.textContent).to.equal('DEF');
           });
 
           it('should undo', inject(function(commandStack) {
@@ -622,7 +622,7 @@ describe('name-properties', function() {
             commandStack.undo();
 
             // then
-            expect(field.value).to.equal('ITEM');
+            expect(field.textContent).to.equal('ITEM');
           }));
 
 
@@ -632,7 +632,7 @@ describe('name-properties', function() {
             commandStack.redo();
 
             // then
-            expect(field.value).to.equal('DEF');
+            expect(field.textContent).to.equal('DEF');
           }));
 
         });
@@ -665,7 +665,7 @@ describe('name-properties', function() {
 
             it('should execute', function() {
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             });
 
             it('should undo', inject(function(commandStack) {
@@ -673,7 +673,7 @@ describe('name-properties', function() {
               commandStack.undo();
 
               // then
-              expect(field.value).to.equal('DEF');
+              expect(field.textContent).to.equal('DEF');
             }));
 
 
@@ -683,7 +683,7 @@ describe('name-properties', function() {
               commandStack.redo();
 
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             }));
 
           });
@@ -738,7 +738,7 @@ describe('name-properties', function() {
           describe('in the DOM', function() {
 
             it('should execute', function() {
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             });
 
             it('should undo', inject(function(commandStack) {
@@ -746,7 +746,7 @@ describe('name-properties', function() {
               commandStack.undo();
 
               // then
-              expect(field.value).to.equal('');
+              expect(field.textContent).to.equal('');
             }));
 
 
@@ -756,7 +756,7 @@ describe('name-properties', function() {
               commandStack.redo();
 
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             }));
 
           });
@@ -812,7 +812,7 @@ describe('name-properties', function() {
           describe('in the DOM', function() {
 
             it('should execute', function() {
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             });
 
             it('should undo', inject(function(commandStack) {
@@ -820,7 +820,7 @@ describe('name-properties', function() {
               commandStack.undo();
 
               // then
-              expect(field.value).to.equal('PLAN_ON_PART');
+              expect(field.textContent).to.equal('PLAN_ON_PART');
             }));
 
 
@@ -830,7 +830,7 @@ describe('name-properties', function() {
               commandStack.redo();
 
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             }));
 
           });
@@ -883,7 +883,7 @@ describe('name-properties', function() {
           describe('in the DOM', function() {
 
             it('should execute', function() {
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             });
 
             it('should undo', inject(function(commandStack) {
@@ -891,7 +891,7 @@ describe('name-properties', function() {
               commandStack.undo();
 
               // then
-              expect(field.value).to.equal('CASE_ON_PART');
+              expect(field.textContent).to.equal('CASE_ON_PART');
             }));
 
 
@@ -901,7 +901,7 @@ describe('name-properties', function() {
               commandStack.redo();
 
               // then
-              expect(field.value).to.equal('foo');
+              expect(field.textContent).to.equal('foo');
             }));
 
           });
@@ -955,7 +955,7 @@ describe('name-properties', function() {
         describe('in the DOM', function() {
 
           it('should execute', function() {
-            expect(field.value).to.equal('foo');
+            expect(field.textContent).to.equal('foo');
           });
 
           it('should undo', inject(function(commandStack) {
@@ -963,7 +963,7 @@ describe('name-properties', function() {
             commandStack.undo();
 
             // then
-            expect(field.value).to.equal('TEXT_ANNOTATION');
+            expect(field.textContent).to.equal('TEXT_ANNOTATION');
           }));
 
 
@@ -973,7 +973,7 @@ describe('name-properties', function() {
             commandStack.redo();
 
             // then
-            expect(field.value).to.equal('foo');
+            expect(field.textContent).to.equal('foo');
           }));
 
         });

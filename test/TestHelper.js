@@ -2,7 +2,8 @@
 
 var TestHelper = module.exports = require('cmmn-js/test/helper');
 
-var domQuery = require('min-dom/lib/query');
+var domQuery = require('min-dom/lib/query'),
+    domAttr = require('min-dom/lib/attr');
 
 TestHelper.insertCSS('diagram-js.css', require('diagram-js/assets/diagram-js.css'));
 TestHelper.insertCSS('cmmn-embedded.css', require('cmmn-js/assets/cmmn-font/css/cmmn-embedded.css'));
@@ -79,7 +80,11 @@ var triggerEvent = function(element, eventType) {
 };
 
 var triggerValue = function(element, value, eventType) {
-  element.value = value;
+  if (domAttr(element, 'contenteditable')) {
+    element.innerText = value;
+  } else {
+    element.value = value;
+  }
 
   this.triggerEvent(element, eventType);
 };

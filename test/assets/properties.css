@@ -11,7 +11,8 @@
 }
 
 .cpp-properties-entry input.invalid,
-.cpp-properties-entry textarea.invalid {
+.cpp-properties-entry textarea.invalid,
+.cpp-properties-entry [contenteditable].invalid {
   border-color: red;
   background: rgb(255, 209, 209);
 }
