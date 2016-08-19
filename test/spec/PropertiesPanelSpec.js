@@ -15,7 +15,8 @@ var propertiesPanelModule = require('../../lib'),
     propertiesProviderModule = require('./properties');
 
 
-var domQuery = require('min-dom/lib/query');
+var domQuery = require('min-dom/lib/query'),
+    domAttr = require('min-dom/lib/attr');
 
 
 describe('properties-panel', function() {
@@ -127,5 +128,68 @@ describe('properties-panel', function() {
     });
 
   });
+
+
+  describe('tab selection', function() {
+
+    function getActiveTabId(container) {
+      var activeTabNode = domQuery('.cpp-properties-tab.cpp-active', container);
+      return domAttr(activeTabNode, 'data-tab');
+    }
+
+    it('should keep the selected tab when changing the selected element',
+      inject(function(propertiesPanel, selection, elementRegistry) {
+
+        propertiesPanel.attachTo(container);
+
+        // select event
+        var shape = elementRegistry.get('PlanItem_1');
+        selection.select(shape);
+
+        // first: check selected tab
+        expect(getActiveTabId(propertiesPanel._container)).to.equal('tab1');
+
+        // select tab2
+        propertiesPanel.activateTab('tab2');
+
+        // check selected tab
+        expect(getActiveTabId(propertiesPanel._container)).to.equal('tab2');
+
+        // select task
+        shape = elementRegistry.get('CasePlanModel_1');
+        selection.select(shape);
+
+        // check selected tab again
+        expect(getActiveTabId(propertiesPanel._container)).to.equal('tab2');
+
+      }));
+
+
+    it('should select the first tab because the selected tab does not exist',
+      inject(function(propertiesPanel, selection, elementRegistry) {
+
+        propertiesPanel.attachTo(container);
+
+        // select task
+        var shape = elementRegistry.get('CasePlanModel_1');
+        selection.select(shape);
+
+        // select tab3
+        propertiesPanel.activateTab('tab3');
+
+        // check selected tab
+        expect(getActiveTabId(propertiesPanel._container)).to.equal('tab3');
+
+        // select event
+        shape = elementRegistry.get('PlanItem_1');
+        selection.select(shape);
+
+        // check selected tab again
+        expect(getActiveTabId(propertiesPanel._container)).to.equal('tab1');
+
+      }));
+
+  });
+
 
 });

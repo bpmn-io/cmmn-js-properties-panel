@@ -205,11 +205,46 @@ function PropertiesProvider(eventBus, cmmnFactory) {
 
   this.getTabs = function(element) {
 
-    return [{
-      id: 'tab1',
-      label: 'Tab 1',
-      groups: createGroups(element, cmmnFactory)
-    }];
+    if (is(element, 'cmmn:PlanItem')) {
+
+      return [
+        {
+          id: 'tab1',
+          label: 'Tab 1',
+          groups: createGroups(element, cmmnFactory)
+        },
+        {
+          id: 'tab2',
+          label: 'Tab 2',
+          groups: createGroups(element, cmmnFactory)
+        },
+        {
+          id: 'tab3',
+          label: 'Tab 3'
+        }
+      ];
+
+    } else {
+
+      return [
+        {
+          id: 'tab1',
+          label: 'Tab 1',
+          groups: createGroups(element, cmmnFactory)
+        },
+        {
+          id: 'tab2',
+          label: 'Tab 2',
+          groups: createGroups(element, cmmnFactory)
+        },
+        {
+          id: 'tab3',
+          label: 'Tab 3',
+          groups: createGroups(element, cmmnFactory)
+        }
+      ];
+
+    }
 
   };
 }
