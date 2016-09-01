@@ -755,6 +755,90 @@ describe('listener-fieldInjection - properties', function() {
     });
 
 
+    describe('#caseExecutionListener with stringValue attr', function() {
+
+      var camundaField;
+
+      beforeEach(inject(function(propertiesPanel, elementRegistry, selection) {
+        var shape = elementRegistry.get('PlanItem_Task_StringValue');
+        selection.select(shape);
+
+        var bo = getBusinessObject(shape).definitionRef;
+        camundaField = getCamundaFields(bo, CASE_EXECUTION_LISTENER_TYPE, 0)[0];
+
+        // select listener
+        selectOption(propertiesPanel._container, CASE_EXECUTION_LISTENER_SELECT_ELEMENT);
+        // select field
+        selectOption(propertiesPanel._container, FIELDS_SELECT_ELEMENT);
+
+      }));
+
+      describe('#fieldValue', function() {
+
+        var field;
+
+        beforeEach(inject(function(propertiesPanel) {
+          field = getTextbox(propertiesPanel._container, FIELD_VALUE_ELEMENT);
+
+          TestHelper.triggerValue(field, 'FOO', 'change');
+
+        }));
+
+        describe('in the DOM', function() {
+
+          it('should execute', function() {
+            expect(field.textContent).to.equal('FOO');
+          });
+
+          it('should undo', inject(function(commandStack) {
+
+            commandStack.undo();
+
+            expect(field.textContent).to.equal('myListenerValue');
+          }));
+
+          it('should redo', inject(function(commandStack) {
+
+            commandStack.undo();
+            commandStack.redo();
+
+            expect(field.textContent).to.equal('FOO');
+
+          }));
+
+        });
+
+        describe('on the business object', function() {
+
+          it('should execute', function() {
+            expect(camundaField.get('string')).to.equal('FOO');
+            expect(camundaField.get('stringValue')).to.be.undefined;
+          });
+
+          it('should undo', inject(function(commandStack) {
+
+            commandStack.undo();
+
+            expect(camundaField.get('stringValue')).to.equal('myListenerValue');
+          }));
+
+          it('should redo', inject(function(commandStack) {
+
+            commandStack.undo();
+            commandStack.redo();
+
+            expect(camundaField.get('string')).to.equal('FOO');
+            expect(camundaField.get('stringValue')).to.be.undefined;
+          }));
+
+        });
+
+      });
+
+
+    });
+
+
     describe('#taskListener', function() {
 
       var camundaField;
