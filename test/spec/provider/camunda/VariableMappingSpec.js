@@ -1262,4 +1262,86 @@ describe('variable-mapping-properties', function() {
 
   });
 
+
+  describe('control visibility', function() {
+
+    function expectVisible(visible, getter, inputNode, parentElement) {
+
+      return inject(function(propertiesPanel, selection, elementRegistry) {
+
+        var field = getter(propertiesPanel._container, inputNode);
+
+        if (parentElement) {
+          field = field.parentElement;
+        }
+
+        // then
+        if (visible) {
+          expect(field).to.exist;
+        } else {
+          expect(domClasses(field).has('cpp-hidden')).to.be.true;
+        }
+      });
+    }
+
+    describe('should show', function() {
+
+      describe('all fields when in variable mapping is selected', function() {
+
+        beforeEach(inject(function(elementRegistry, selection, propertiesPanel) {
+
+          var item = elementRegistry.get('PlanItem_CaseTask_Source');
+          selection.select(item);
+
+          selectVariableMapping(propertiesPanel, 'cam-extensionElements-variableMapping-in');
+
+        }));
+
+        it('type', expectVisible(true, getSelect, 'camunda-variableMapping-inOutType-select'));
+        it('source', expectVisible(true, getInput, 'source'));
+        it('target', expectVisible(true, getInput, 'target'));
+        it('local', expectVisible(true, getInput, 'local'));
+
+      });
+
+    });
+
+    describe('should hide', function() {
+
+      describe('all fields when no variable mapping is selected', function() {
+
+        beforeEach(inject(function(elementRegistry, selection) {
+
+          var item = elementRegistry.get('PlanItem_CaseTask_Source');
+          selection.select(item);
+
+        }));
+
+        it('type', expectVisible(false, getSelect, 'camunda-variableMapping-inOutType-select'));
+        it('source', expectVisible(false, getInput, 'source', true));
+        it('target', expectVisible(false, getInput, 'target', true));
+        it('local', expectVisible(false, getInput, 'local'));
+
+      });
+
+      describe('"local" checkbox when out variable mapping is selected', function() {
+
+        beforeEach(inject(function(elementRegistry, selection, propertiesPanel) {
+
+          var item = elementRegistry.get('PlanItem_CaseTask_Out_All');
+          selection.select(item);
+
+          selectVariableMapping(propertiesPanel, 'cam-extensionElements-variableMapping-out');
+
+        }));
+
+        it('local', expectVisible(false, getInput, 'local'));
+
+      });
+
+    });
+
+  });
+
+
 });
