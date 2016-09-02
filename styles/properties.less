@@ -308,6 +308,20 @@ label.cpp-hidden {
   content: '\E806';
 }
 
+.cpp-field-description {
+  margin-top: 5px;
+  color: #999;
+
+  a {
+    color: darken(@cpp-color-primary, 10%);
+    text-decoration: none;
+
+    &:hover {
+      color: @cpp-color-primary;
+    }
+  }
+}
+
 
 @import "./header";
 @import "./groups";
