@@ -72,6 +72,8 @@ function selectVariableMapping(propertiesPanel, selectorId) {
 var CAMUNDA_IN_EXTENSION_ELEMENT = 'camunda:In',
     CAMUNDA_OUT_EXTENSION_ELEMENT = 'camunda:Out';
 
+var BUSINESS_KEY_VALUE = '#{caseExecution.caseBusinessKey}';
+
 
 describe('variable-mapping-properties', function() {
 
@@ -287,7 +289,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           expect(field.checked).to.be.true;
-          expect(variableMappings[0].get('businessKey')).to.equal('#{execution.processBusinessKey}');
+          expect(variableMappings[0].get('businessKey')).to.equal(BUSINESS_KEY_VALUE);
 
         }));
 
@@ -438,7 +440,7 @@ describe('variable-mapping-properties', function() {
 
         it('should execute', function() {
           var variableMappings = getCamundaInWithBusinessKey(bo.get('extensionElements'));
-          expect(variableMappings[0].get('businessKey')).to.equal('#{execution.processBusinessKey}');
+          expect(variableMappings[0].get('businessKey')).to.equal(BUSINESS_KEY_VALUE);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -457,7 +459,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getCamundaInWithBusinessKey(bo.get('extensionElements'));
-          expect(variableMappings[0].get('businessKey')).to.equal('#{execution.processBusinessKey}');
+          expect(variableMappings[0].get('businessKey')).to.equal(BUSINESS_KEY_VALUE);
         }));
 
       });

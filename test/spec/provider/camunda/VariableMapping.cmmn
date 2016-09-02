@@ -42,7 +42,7 @@
       </cmmn:caseTask>
       <cmmn:processTask id="ProcessTask_BusinessKey" name="ProcessTask_BusinessKey">
         <cmmn:extensionElements>
-          <camunda:in businessKey="#{execution.processBusinessKey}" />
+          <camunda:in businessKey="#{caseExecution.caseBusinessKey}" />
         </cmmn:extensionElements>
       </cmmn:processTask>
       <cmmn:caseTask id="CaseTask_Empty" name="CaseTask_Empty" />
