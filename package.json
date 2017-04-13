@@ -65,7 +65,6 @@
     "selection-update": "^0.1.2"
   },
   "peerDependencies": {
-    "cmmn-js": ">=0.3 <0.8",
-    "diagram-js": ">=0.12 <0.21"
+    "cmmn-js": ">=0.3 <0.8"
   }
 }
