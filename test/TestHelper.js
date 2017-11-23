@@ -33,12 +33,9 @@ TestHelper.bootstrapModeler = function(diagram, options, locals) {
     var previousInstance = TestHelper.getCmmnJs();
 
     if (previousInstance) {
-      var container = previousInstance.container.parentNode;
-
-      container.parentNode.removeChild(container);
-
       previousInstance.destroy();
     }
+
     return bootstrapModeler(diagram, options, locals).apply(this, [ done ]);
   };
 };
