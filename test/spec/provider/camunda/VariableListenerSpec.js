@@ -777,7 +777,7 @@ describe('variable-listener-properties', function() {
 
       });
 
-    });    
+    });
 
 
   });
@@ -808,7 +808,7 @@ describe('variable-listener-properties', function() {
     describe('in the DOM', function() {
 
       it('should execute', function() {
-        expect(field).to.have.length.of(1);
+        expect(field).to.have.length(1);
       });
 
       it('should undo', inject(function(commandStack) {
@@ -816,7 +816,7 @@ describe('variable-listener-properties', function() {
         commandStack.undo();
 
         // then
-        expect(field).to.have.length.of(0);
+        expect(field).to.have.length(0);
       }));
 
       it('should redo', inject(function(commandStack) {
@@ -825,7 +825,7 @@ describe('variable-listener-properties', function() {
         commandStack.redo();
 
         // then
-        expect(field).to.have.length.of(1);
+        expect(field).to.have.length(1);
       }));
 
     });
@@ -834,7 +834,7 @@ describe('variable-listener-properties', function() {
 
       it('should execute', function() {
         var listeners = getVariableListeners(bo.get('extensionElements'));
-        expect(listeners).to.have.length.of(1);
+        expect(listeners).to.have.length(1);
       });
 
       it('should undo', inject(function(commandStack) {
@@ -843,7 +843,7 @@ describe('variable-listener-properties', function() {
 
         // then
         var listeners = getVariableListeners(bo.get('extensionElements'));
-        expect(listeners).to.have.length.of(0);
+        expect(listeners).to.have.length(0);
       }));
 
       it('should redo', inject(function(commandStack) {
@@ -853,7 +853,7 @@ describe('variable-listener-properties', function() {
 
         // then
         var listeners = getVariableListeners(bo.get('extensionElements'));
-        expect(listeners).to.have.length.of(1);
+        expect(listeners).to.have.length(1);
       }));
 
     });
@@ -890,7 +890,7 @@ describe('variable-listener-properties', function() {
     describe('in the DOM', function() {
 
       it('should execute', function() {
-        expect(field).to.have.length.of(0);
+        expect(field).to.have.length(0);
       });
 
       it('should undo', inject(function(commandStack) {
@@ -898,7 +898,7 @@ describe('variable-listener-properties', function() {
         commandStack.undo();
 
         // then
-        expect(field).to.have.length.of(1);
+        expect(field).to.have.length(1);
       }));
 
       it('should redo', inject(function(commandStack) {
@@ -907,7 +907,7 @@ describe('variable-listener-properties', function() {
         commandStack.redo();
 
         // then
-        expect(field).to.have.length.of(0);
+        expect(field).to.have.length(0);
       }));
 
     });
@@ -916,7 +916,7 @@ describe('variable-listener-properties', function() {
 
       it('should execute', function() {
         var listeners = getVariableListeners(bo.get('extensionElements'));
-        expect(listeners).to.have.length.of(0);
+        expect(listeners).to.have.length(0);
       });
 
       it('should undo', inject(function(commandStack) {
@@ -925,7 +925,7 @@ describe('variable-listener-properties', function() {
 
         // then
         var listeners = getVariableListeners(bo.get('extensionElements'));
-        expect(listeners).to.have.length.of(1);
+        expect(listeners).to.have.length(1);
       }));
 
       it('should redo', inject(function(commandStack) {
@@ -935,7 +935,7 @@ describe('variable-listener-properties', function() {
 
         // then
         var listeners = getVariableListeners(bo.get('extensionElements'));
-        expect(listeners).to.have.length.of(0);
+        expect(listeners).to.have.length(0);
       }));
 
     });
@@ -976,7 +976,7 @@ describe('variable-listener-properties', function() {
       describe('in the DOM', function() {
 
         it('should execute', function() {
-          expect(listenersSelect).to.have.length.of(1);
+          expect(listenersSelect).to.have.length(1);
           expect(eventType.value).to.equal('update');
         });
 
@@ -985,7 +985,7 @@ describe('variable-listener-properties', function() {
       describe('on the business object', function() {
 
         it('should execute', function() {
-          expect(listeners).to.have.length.of(1);
+          expect(listeners).to.have.length(1);
           expect(listeners[0].get('event')).to.equal('update');
         });
 

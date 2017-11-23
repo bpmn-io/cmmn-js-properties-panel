@@ -10,7 +10,7 @@ var propertiesPanelModule = require('../../../../lib'),
     domQuery = require('min-dom/lib/query'),
     domClasses = require('min-dom/lib/classes'),
     is = require('cmmn-js/lib/util/ModelUtil').is,
-    forEach = require('lodash/collection/forEach'),    
+    forEach = require('lodash/collection/forEach'),
     coreModule = require('cmmn-js/lib/core'),
     selectionModule = require('diagram-js/lib/features/selection'),
     modelingModule = require('cmmn-js/lib/features/modeling'),
@@ -66,7 +66,7 @@ function selectVariableMapping(propertiesPanel, selectorId) {
   var inMappings = getSelect(propertiesPanel._container, selectorId);
 
   inMappings.options[0].selected = 'selected';
-  TestHelper.triggerEvent(inMappings, 'change');  
+  TestHelper.triggerEvent(inMappings, 'change');
 }
 
 var CAMUNDA_IN_EXTENSION_ELEMENT = 'camunda:In',
@@ -970,7 +970,7 @@ describe('variable-mapping-properties', function() {
       describe('in the DOM', function() {
 
         it('should execute', function() {
-          expect(field).to.have.length.of(1);
+          expect(field).to.have.length(1);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -978,7 +978,7 @@ describe('variable-mapping-properties', function() {
           commandStack.undo();
 
           // then
-          expect(field).to.have.length.of(0);
+          expect(field).to.have.length(0);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -987,7 +987,7 @@ describe('variable-mapping-properties', function() {
           commandStack.redo();
 
           // then
-          expect(field).to.have.length.of(1);
+          expect(field).to.have.length(1);
         }));
 
       });
@@ -996,7 +996,7 @@ describe('variable-mapping-properties', function() {
 
         it('should execute', function() {
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_IN_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(1);
+          expect(variableMappings).to.have.length(1);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -1005,7 +1005,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_IN_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(0);
+          expect(variableMappings).to.have.length(0);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -1015,7 +1015,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_IN_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(1);
+          expect(variableMappings).to.have.length(1);
         }));
 
       });
@@ -1047,7 +1047,7 @@ describe('variable-mapping-properties', function() {
       describe('in the DOM', function() {
 
         it('should execute', function() {
-          expect(field).to.have.length.of(1);
+          expect(field).to.have.length(1);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -1055,7 +1055,7 @@ describe('variable-mapping-properties', function() {
           commandStack.undo();
 
           // then
-          expect(field).to.have.length.of(0);
+          expect(field).to.have.length(0);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -1064,7 +1064,7 @@ describe('variable-mapping-properties', function() {
           commandStack.redo();
 
           // then
-          expect(field).to.have.length.of(1);
+          expect(field).to.have.length(1);
         }));
 
       });
@@ -1073,7 +1073,7 @@ describe('variable-mapping-properties', function() {
 
         it('should execute', function() {
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_OUT_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(1);
+          expect(variableMappings).to.have.length(1);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -1082,7 +1082,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_OUT_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(0);
+          expect(variableMappings).to.have.length(0);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -1092,7 +1092,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_OUT_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(1);
+          expect(variableMappings).to.have.length(1);
         }));
 
       });
@@ -1131,7 +1131,7 @@ describe('variable-mapping-properties', function() {
       describe('in the DOM', function() {
 
         it('should execute', function() {
-          expect(field).to.have.length.of(0);
+          expect(field).to.have.length(0);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -1139,7 +1139,7 @@ describe('variable-mapping-properties', function() {
           commandStack.undo();
 
           // then
-          expect(field).to.have.length.of(1);
+          expect(field).to.have.length(1);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -1148,7 +1148,7 @@ describe('variable-mapping-properties', function() {
           commandStack.redo();
 
           // then
-          expect(field).to.have.length.of(0);
+          expect(field).to.have.length(0);
         }));
 
       });
@@ -1157,7 +1157,7 @@ describe('variable-mapping-properties', function() {
 
         it('should execute', function() {
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_IN_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(0);
+          expect(variableMappings).to.have.length(0);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -1166,7 +1166,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_IN_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(1);
+          expect(variableMappings).to.have.length(1);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -1176,7 +1176,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_IN_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(0);
+          expect(variableMappings).to.have.length(0);
         }));
 
       });
@@ -1210,7 +1210,7 @@ describe('variable-mapping-properties', function() {
       describe('in the DOM', function() {
 
         it('should execute', function() {
-          expect(field).to.have.length.of(0);
+          expect(field).to.have.length(0);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -1218,7 +1218,7 @@ describe('variable-mapping-properties', function() {
           commandStack.undo();
 
           // then
-          expect(field).to.have.length.of(1);
+          expect(field).to.have.length(1);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -1227,7 +1227,7 @@ describe('variable-mapping-properties', function() {
           commandStack.redo();
 
           // then
-          expect(field).to.have.length.of(0);
+          expect(field).to.have.length(0);
         }));
 
       });
@@ -1236,7 +1236,7 @@ describe('variable-mapping-properties', function() {
 
         it('should execute', function() {
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_OUT_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(0);
+          expect(variableMappings).to.have.length(0);
         });
 
         it('should undo', inject(function(commandStack) {
@@ -1245,7 +1245,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_OUT_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(1);
+          expect(variableMappings).to.have.length(1);
         }));
 
         it('should redo', inject(function(commandStack) {
@@ -1255,7 +1255,7 @@ describe('variable-mapping-properties', function() {
 
           // then
           var variableMappings = getVariableMappings(bo.get('extensionElements'), CAMUNDA_OUT_EXTENSION_ELEMENT);
-          expect(variableMappings).to.have.length.of(0);
+          expect(variableMappings).to.have.length(0);
         }));
 
       });
