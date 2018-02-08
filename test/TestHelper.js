@@ -5,8 +5,13 @@ var TestHelper = module.exports = require('cmmn-js/test/helper');
 var domQuery = require('min-dom/lib/query'),
     domAttr = require('min-dom/lib/attr');
 
-TestHelper.insertCSS('diagram-js.css', require('diagram-js/assets/diagram-js.css'));
-TestHelper.insertCSS('cmmn-embedded.css', require('cmmn-js/assets/cmmn-font/css/cmmn-embedded.css'));
+TestHelper.insertCSS('diagram-js.css',
+  require('diagram-js/assets/diagram-js.css')
+);
+
+TestHelper.insertCSS('cmmn-embedded.css',
+  require('cmmn-js/dist/assets/cmmn-font/css/cmmn-embedded.css')
+);
 TestHelper.insertCSS('properties.css', require('./assets/properties.css'));
 
 TestHelper.insertCSS('diagram-js-testing.css',

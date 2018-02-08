@@ -25,13 +25,13 @@
     "browserify": "^14.5.0",
     "camunda-cmmn-moddle": "^1.0.0",
     "chai": "^4.1.2",
-    "cmmn-js": "^0.8.0",
-    "diagram-js": "^0.18.1",
-    "eslint": "^2.11.1",
-    "eslint-plugin-mocha": "^2.2.0",
+    "cmmn-js": "^0.10.0",
+    "diagram-js": "^0.28.1",
+    "eslint": "^4.17.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "grunt": "^0.4.4",
     "grunt-cli": "^1.2.0",
-    "grunt-eslint": "^18.1.0",
+    "grunt-eslint": "^20.1.0",
     "grunt-karma": "^0.12.0",
     "grunt-release": "^0.13.0",
     "karma": "^1.7.1",
@@ -49,7 +49,7 @@
     "mocha-test-container-support": "0.2.0",
     "phantomjs-prebuilt": "^2.1.4",
     "puppeteer": "^0.13.0",
-    "sinon": "^4.1.2",
+    "sinon": "^4.2.2",
     "sinon-chai": "^2.14.0",
     "stringify": "^5.2.0",
     "time-grunt": "^0.3.2",
@@ -64,6 +64,6 @@
     "selection-update": "^0.1.2"
   },
   "peerDependencies": {
-    "cmmn-js": ">=0.3 <0.9"
+    "cmmn-js": ">=0.3 <1.0"
   }
 }
