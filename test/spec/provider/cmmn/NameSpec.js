@@ -7,10 +7,10 @@ var TestContainer = require('mocha-test-container-support');
 /* global bootstrapModeler, inject */
 
 var propertiesPanelModule = require('../../../../lib'),
-    domQuery = require('min-dom/lib/query'),
-    domClasses = require('min-dom/lib/classes'),
+    domQuery = require('min-dom').query,
+    domClasses = require('min-dom').classes,
     coreModule = require('cmmn-js/lib/core'),
-    selectionModule = require('diagram-js/lib/features/selection'),
+    selectionModule = require('diagram-js/lib/features/selection').default,
     modelingModule = require('cmmn-js/lib/features/modeling'),
     propertiesProviderModule = require('../../../../lib/provider/cmmn');
 
@@ -1081,7 +1081,7 @@ describe('name-properties', function() {
           // given
           var shape = elementRegistry.get('PI_HumanTask_3');
           var container = propertiesPanel._container;
-          
+
           // when
           selection.select(shape);
 

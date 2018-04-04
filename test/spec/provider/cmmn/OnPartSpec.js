@@ -7,10 +7,10 @@ var TestContainer = require('mocha-test-container-support');
 /* global bootstrapModeler, inject */
 
 var propertiesPanelModule = require('../../../../lib'),
-    domClasses = require('min-dom/lib/classes'),
-    domQuery = require('min-dom/lib/query'),
+    domClasses = require('min-dom').classes,
+    domQuery = require('min-dom').query,
     coreModule = require('cmmn-js/lib/core'),
-    selectionModule = require('diagram-js/lib/features/selection'),
+    selectionModule = require('diagram-js/lib/features/selection').default,
     modelingModule = require('cmmn-js/lib/features/modeling'),
     propertiesProviderModule = require('../../../../lib/provider/cmmn');
 

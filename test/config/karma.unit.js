@@ -22,9 +22,9 @@ var browsers =
         if (process.platform === 'linux') {
           return 'ChromeHeadless_Linux';
         }
-      } else {
-        return browser;
       }
+
+      return browser;
     });
 
 module.exports = function(karma) {
@@ -70,7 +70,23 @@ module.exports = function(karma) {
     browserify: {
       debug: true,
       paths: [ absoluteBasePath ],
-      transform: [ [ 'stringify', { global: true, extensions: [ '.cmmn', '.xml', '.css' ] } ] ]
+      transform: [
+        [ 'babelify', {
+          global: true,
+          babelrc: false,
+          presets: [
+            'env'
+          ]
+        } ],
+        [ 'stringify', {
+          global: true,
+          extensions: [
+            '.cmmn',
+            '.xml',
+            '.css'
+          ]
+        } ]
+      ]
     }
   });
 };

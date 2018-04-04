@@ -10,13 +10,13 @@ var TestContainer = require('mocha-test-container-support');
 
 var propertiesPanelModule = require('../../lib'),
     coreModule = require('cmmn-js/lib/core'),
-    selectionModule = require('diagram-js/lib/features/selection'),
+    selectionModule = require('diagram-js/lib/features/selection').default,
     modelingModule = require('cmmn-js/lib/features/modeling'),
     propertiesProviderModule = require('./properties');
 
 
-var domQuery = require('min-dom/lib/query'),
-    domAttr = require('min-dom/lib/attr');
+var domQuery = require('min-dom').query,
+    domAttr = require('min-dom').attr;
 
 
 describe('properties-panel', function() {

@@ -7,9 +7,9 @@ var TestContainer = require('mocha-test-container-support');
 /* global bootstrapModeler, inject */
 
 var propertiesPanelModule = require('../../../../lib'),
-    domQuery = require('min-dom/lib/query'),
+    domQuery = require('min-dom').query,
     coreModule = require('cmmn-js/lib/core'),
-    selectionModule = require('diagram-js/lib/features/selection'),
+    selectionModule = require('diagram-js/lib/features/selection').default,
     modelingModule = require('cmmn-js/lib/features/modeling'),
     propertiesProviderModule = require('../../../../lib/provider/cmmn');
 
@@ -85,7 +85,7 @@ describe('ifPart-properties', function() {
   describe('set', function() {
 
     var item, bo, field;
-    
+
     describe('should set the condition body', function() {
 
       beforeEach(inject(function(elementRegistry, selection, propertiesPanel) {
