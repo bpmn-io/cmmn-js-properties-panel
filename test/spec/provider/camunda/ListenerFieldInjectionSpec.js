@@ -91,16 +91,16 @@ describe('listener-fieldInjection - properties', function() {
   }
 
   var CASE_EXECUTION_LISTENER_TYPE = 'camunda:CaseExecutionListener',
-      TASK_LISTENER_TYPE       = 'camunda:TaskListener',
+      TASK_LISTENER_TYPE = 'camunda:TaskListener',
       VARIABLE_LISTENER_TYPE = 'camunda:VariableListener';
 
-  var FIELD_NAME_ELEMENT                = { dataEntry: 'listener-field-name', name: 'fieldName' },
-      FIELD_TYPE_ELEMENT                = { dataEntry: 'listener-field-type', name: 'fieldType' },
-      FIELD_VALUE_ELEMENT               = { dataEntry: 'listener-field-value', name: 'fieldValue' },
-      FIELDS_SELECT_ELEMENT             = { dataEntry: 'listener-fields', name: 'selectedExtensionElement' },
+  var FIELD_NAME_ELEMENT = { dataEntry: 'listener-field-name', name: 'fieldName' },
+      FIELD_TYPE_ELEMENT = { dataEntry: 'listener-field-type', name: 'fieldType' },
+      FIELD_VALUE_ELEMENT = { dataEntry: 'listener-field-value', name: 'fieldValue' },
+      FIELDS_SELECT_ELEMENT = { dataEntry: 'listener-fields', name: 'selectedExtensionElement' },
       CASE_EXECUTION_LISTENER_SELECT_ELEMENT = { dataEntry: 'caseExecutionListeners', name: 'selectedExtensionElement' },
-      TASK_LISTENER_SELECT_ELEMENT      = { dataEntry: 'taskListeners', name: 'selectedExtensionElement' },
-      VARIABLE_LISTENER_SELECT_ELEMENT  = { dataEntry: 'variableListeners', name: 'selectedExtensionElement' };
+      TASK_LISTENER_SELECT_ELEMENT = { dataEntry: 'taskListeners', name: 'selectedExtensionElement' },
+      VARIABLE_LISTENER_SELECT_ELEMENT = { dataEntry: 'variableListeners', name: 'selectedExtensionElement' };
 
 
   describe('get', function() {
