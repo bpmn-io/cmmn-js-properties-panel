@@ -8,7 +8,7 @@ var TestContainer = require('mocha-test-container-support');
 
 
 
-var propertiesPanelModule = require('../../lib'),
+var propertiesPanelModule = require('lib'),
     coreModule = require('cmmn-js/lib/core'),
     selectionModule = require('diagram-js/lib/features/selection').default,
     modelingModule = require('cmmn-js/lib/features/modeling'),

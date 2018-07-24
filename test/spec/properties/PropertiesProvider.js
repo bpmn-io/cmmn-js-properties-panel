@@ -2,9 +2,9 @@
 
 var inherits = require('inherits');
 
-var PropertiesActivator = require('../../../lib/PropertiesActivator');
+var PropertiesActivator = require('lib/PropertiesActivator');
 
-var entryFactory = require('../../../lib/factory/EntryFactory');
+var entryFactory = require('lib/factory/EntryFactory');
 
 var is = require('cmmn-js/lib/util/ModelUtil').is,
     getBusinessObject = require('cmmn-js/lib/util/ModelUtil').getBusinessObject;

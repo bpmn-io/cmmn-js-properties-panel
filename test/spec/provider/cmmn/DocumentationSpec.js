@@ -6,12 +6,12 @@ var TestContainer = require('mocha-test-container-support');
 
 /* global bootstrapModeler, inject */
 
-var propertiesPanelModule = require('../../../../lib'),
+var propertiesPanelModule = require('lib'),
     domQuery = require('min-dom').query,
     coreModule = require('cmmn-js/lib/core'),
     selectionModule = require('diagram-js/lib/features/selection').default,
     modelingModule = require('cmmn-js/lib/features/modeling'),
-    propertiesProviderModule = require('../../../../lib/provider/cmmn');
+    propertiesProviderModule = require('lib/provider/cmmn');
 
 
 function getInput(container, selector) {
