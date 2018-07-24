@@ -1,10 +1,6 @@
-'use strict';
-
 var path = require('path');
 
-var basePath = '../../';
-
-var absoluteBasePath = path.resolve(path.join(__dirname, basePath));
+var absoluteBasePath = path.resolve(__dirname);
 
 /* global process */
 
@@ -27,26 +23,26 @@ var browsers =
       return browser;
     });
 
+
 module.exports = function(karma) {
   karma.set({
 
-    basePath: basePath,
-
     frameworks: [
-      'browserify',
       'mocha',
       'sinon-chai'
     ],
 
     files: [
-      'test/spec/**/*Spec.js'
+      'test/suite.js'
     ],
 
     preprocessors: {
-      'test/spec/**/*Spec.js': [ 'browserify' ]
+      'test/suite.js': [ 'webpack' ]
     },
 
     reporters: [ 'spec' ],
+
+    browsers: browsers,
 
     customLaunchers: {
       ChromeHeadless_Linux: {
@@ -59,34 +55,33 @@ module.exports = function(karma) {
       }
     },
 
-    browsers: browsers,
+    client: {
+      mocha: {
+        timeout: 10000
+      }
+    },
 
     browserNoActivityTimeout: 30000,
 
-    singleRun: false,
-    autoWatch: true,
+    singleRun: true,
+    autoWatch: false,
 
-    // browserify configuration
-    browserify: {
-      debug: true,
-      paths: [ absoluteBasePath ],
-      transform: [
-        [ 'babelify', {
-          global: true,
-          babelrc: false,
-          presets: [
-            'env'
-          ]
-        } ],
-        [ 'stringify', {
-          global: true,
-          extensions: [
-            '.cmmn',
-            '.xml',
-            '.css'
-          ]
-        } ]
-      ]
+    webpack: {
+      mode: 'development',
+      module: {
+        rules: [
+          {
+            test: /\.css|\.cmmn$/,
+            use: 'raw-loader'
+          }
+        ]
+      },
+      resolve: {
+        modules: [
+          'node_modules',
+          absoluteBasePath
+        ]
+      }
     }
   });
 };
