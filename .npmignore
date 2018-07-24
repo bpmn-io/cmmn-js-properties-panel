@@ -1,1 +1,4 @@
+test/*
+.eslintrc
+.travis.yml
 karma.conf.js
