@@ -16,7 +16,7 @@ var propertiesPanelModule = require('lib'),
     getBusinessObject = require('cmmn-js/lib/util/ModelUtil').getBusinessObject,
     getDefinition = require('cmmn-js/lib/util/ModelUtil').getDefinition;
 
-var find = require('lodash/collection/find');
+var find = require('lodash/find');
 
 function getRepeatOnStandardEventSelect(container, entryProp) {
   var entry = domQuery('div[data-entry=' + entryProp + ']', container);

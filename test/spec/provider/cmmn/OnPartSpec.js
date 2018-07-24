@@ -14,7 +14,7 @@ var propertiesPanelModule = require('lib'),
     modelingModule = require('cmmn-js/lib/features/modeling'),
     propertiesProviderModule = require('lib/provider/cmmn');
 
-var find = require('lodash/collection/find');
+var find = require('lodash/find');
 
 function getCheckbox(container, selector) {
   return domQuery('input[' + selector + ']', container);
