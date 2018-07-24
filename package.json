@@ -4,9 +4,12 @@
   "description": "A simple properties panel for cmmn-js",
   "scripts": {
     "lint": "eslint .",
-    "all": "run-s lint test",
+    "all": "run-s lint test build",
     "dev": "npm test -- --no-single-run --auto-watch",
-    "test": "karma start"
+    "build": "run-s build:*",
+    "build:less": "lessc --include-path=node_modules styles/properties.less dist/assets/cmmn-js-properties-panel.css",
+    "test": "karma start",
+    "prepublishOnly": "run-s build"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
     "karma-sinon-chai": "^2.0.2",
     "karma-spec-reporter": "0.0.32",
     "karma-webpack": "^3.0.0",
+    "less": "^3.8.0",
     "mocha": "^5.2.0",
     "mocha-test-container-support": "0.2.0",
     "phantomjs-prebuilt": "^2.1.4",
