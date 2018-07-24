@@ -102,10 +102,8 @@ var cmmnJS = new CmmnJS({
 ```bash
 npm install
 
-# if required: npm install -g grunt-cli
-
 export TEST_BROWSERS=Chrome
-grunt test
+npm run all
 ```
 
 
