@@ -28,8 +28,8 @@
   "devDependencies": {
     "camunda-cmmn-moddle": "^1.0.0",
     "chai": "^4.1.2",
-    "cmmn-js": "^0.15.1",
-    "diagram-js": "^2.5.1",
+    "cmmn-js": "^0.16.0",
+    "diagram-js": "^3.0.1",
     "eslint": "^5.2.0",
     "eslint-plugin-bpmn-io": "^0.5.3",
     "karma": "^2.0.4",
@@ -60,6 +60,6 @@
     "selection-update": "^0.1.2"
   },
   "peerDependencies": {
-    "cmmn-js": ">=0.3 <1.0"
+    "cmmn-js": ">0.3 <1.0"
   }
 }
