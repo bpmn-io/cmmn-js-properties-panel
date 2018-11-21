@@ -6,6 +6,11 @@ All notable changes to [cmmn-js-properties-panel](https://github.com/bpmn-io/cmm
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.0
+
+* `CHORE`: mark as compatible with `cmmn-js@0.16`
+* `FIX`: don't restrict properties panel height unnecessarily ([#61](https://github.com/bpmn-io/cmmn-js-properties-panel/issues/61))
+
 ## 0.6.0
 
 * `FEAT`: provide pre-built styles
