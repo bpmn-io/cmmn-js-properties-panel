@@ -1,6 +1,6 @@
 {
   "name": "cmmn-js-properties-panel",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "A simple properties panel for cmmn-js",
   "scripts": {
     "lint": "eslint .",
