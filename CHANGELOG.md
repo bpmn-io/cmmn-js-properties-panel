@@ -6,6 +6,10 @@ All notable changes to [cmmn-js-properties-panel](https://github.com/bpmn-io/cmm
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.1
+
+* `CHORE`: update to `npm-run-all@4.1.5`
+
 ## 0.7.0
 
 * `CHORE`: mark as compatible with `cmmn-js@0.16`
