@@ -97,6 +97,12 @@ function createGroups(element, cmmnFactory) {
             label : 'myLinkText',
             description: 'For details see [camunda.org](http://www.camunda.org)',
             modelProperty : 'myLinkText'
+          }),
+          entryFactory.textField({
+            id : 'maliciousLinkText',
+            label : 'maliciousLinkText',
+            description: 'For malicious code see [javascript](javascript:alert(1))',
+            modelProperty : 'maliciousLinkText'
           })
         ]
       }
