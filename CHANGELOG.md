@@ -6,6 +6,10 @@ All notable changes to [cmmn-js-properties-panel](https://github.com/bpmn-io/cmm
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.8.0
+
+* `FEAT`: sanitize entities when building HTML ([#63](https://github.com/bpmn-io/cmmn-js-properties-panel/issues/63))
+
 ## 0.7.2
 
 * `CHORE`: move `npm-run-all` to dev-dependencies
