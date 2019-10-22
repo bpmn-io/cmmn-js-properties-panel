@@ -54,7 +54,7 @@
   "dependencies": {
     "ids": "^0.2.0",
     "inherits": "^2.0.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.15",
     "min-dom": "^3.0.0",
     "scroll-tabs": "^1.0.1",
     "selection-update": "^0.1.2"
