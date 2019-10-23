@@ -6,6 +6,10 @@ All notable changes to [cmmn-js-properties-panel](https://github.com/bpmn-io/cmm
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.8.1
+
+* `FIX`: support line breaks in Entry Field Description ([#65](https://github.com/bpmn-io/cmmn-js-properties-panel/pull/65))
+
 ## 0.8.0
 
 * `FEAT`: sanitize entities when building HTML ([#63](https://github.com/bpmn-io/cmmn-js-properties-panel/issues/63))
