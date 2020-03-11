@@ -220,6 +220,15 @@ function createGroups(element, cmmnFactory) {
             }
           }
         ]
+      },
+      {
+        id: 'inputs',
+        entries: [
+          {
+            id: 'contenteditable',
+            html: '<div>Content editable:<div contenteditable></div></div>'
+          }
+        ]
       }
     ];
   }
