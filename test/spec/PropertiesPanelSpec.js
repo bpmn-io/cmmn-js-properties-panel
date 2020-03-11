@@ -253,5 +253,10 @@ describe('properties-panel', function() {
   });
 
 
+  describe('listeners', function() {
 
+    // Cannot be tested due to paste events not affecting document's contents per default.
+    // Cf. https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
+    it('should paste to [contenteditable] as plain text');
+  });
 });
