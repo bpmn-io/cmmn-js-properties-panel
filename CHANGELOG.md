@@ -6,6 +6,10 @@ All notable changes to [cmmn-js-properties-panel](https://github.com/bpmn-io/cmm
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.8.3
+
+* `FIX`: paste always as plain text ([#70](https://github.com/bpmn-io/cmmn-js-properties-panel/pull/70))
+
 ## 0.8.2
 
 * `FIX`: deprecate placeholders in IDs ([#69](https://github.com/bpmn-io/cmmn-js-properties-panel/pull/69))
