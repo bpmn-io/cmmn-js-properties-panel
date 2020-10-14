@@ -1,6 +1,6 @@
 # cmmn-js-properties-panel
 
-[![Build Status](https://travis-ci.org/bpmn-io/cmmn-js-properties-panel.svg?branch=master)](https://travis-ci.org/bpmn-io/cmmn-js-properties-panel)
+[![Build Status](https://travis-ci.com/bpmn-io/cmmn-js-properties-panel.svg?branch=master)](https://travis-ci.com/bpmn-io/cmmn-js-properties-panel)
 
 This is properties panel extension for [cmmn-js](https://github.com/bpmn-io/cmmn-js).
 
