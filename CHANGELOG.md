@@ -6,6 +6,11 @@ All notable changes to [cmmn-js-properties-panel](https://github.com/bpmn-io/cmm
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.0
+
+* `FEAT`: add localization support ([#71](https://github.com/bpmn-io/cmmn-js-properties-panel/pull/71))
+* `FIX`: always past plain text ([#70](https://github.com/bpmn-io/cmmn-js-properties-panel/pull/70))
+
 ## 0.8.3
 
 * `FIX`: paste always as plain text ([#70](https://github.com/bpmn-io/cmmn-js-properties-panel/pull/70))
