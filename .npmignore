@@ -1,5 +1,0 @@
-test/*
-!dist/*
-.eslintrc
-.travis.yml
-karma.conf.js

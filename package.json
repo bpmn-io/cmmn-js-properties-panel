@@ -61,5 +61,11 @@
   },
   "peerDependencies": {
     "cmmn-js": ">0.3 <1.0"
-  }
+  },
+  "files": [
+    "dist",
+    "lib",
+    "styles",
+    "index.js"
+  ]
 }
