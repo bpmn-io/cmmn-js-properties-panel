@@ -1,6 +1,6 @@
 # cmmn-js-properties-panel
 
-[![Build Status](https://travis-ci.com/bpmn-io/cmmn-js-properties-panel.svg?branch=master)](https://travis-ci.com/bpmn-io/cmmn-js-properties-panel)
+[![CI](https://github.com/bpmn-io/cmmn-js-properties-panel/workflows/CI/badge.svg)](https://github.com/bpmn-io/cmmn-js-properties-panel/actions?query=workflow%3ACI)
 
 This is properties panel extension for [cmmn-js](https://github.com/bpmn-io/cmmn-js).
 
